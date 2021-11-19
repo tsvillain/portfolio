@@ -61,17 +61,29 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 100),
-        child: PageView(
-          controller: _pageController,
-          scrollDirection: Axis.vertical,
-          children: [
-            const HomePage(),
-            const AboutPage(),
-            Container(color: Colors.black),
-            Container(color: Colors.pink),
-          ],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(assets.backgroundImage),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.6),
+              BlendMode.hardLight,
+            ),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 100),
+          child: PageView(
+            controller: _pageController,
+            scrollDirection: Axis.vertical,
+            children: [
+              const HomePage(),
+              const AboutPage(),
+              Container(color: Colors.black),
+              Container(color: Colors.pink),
+            ],
+          ),
         ),
       ),
     );

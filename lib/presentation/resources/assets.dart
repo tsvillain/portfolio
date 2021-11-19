@@ -11,4 +11,6 @@ class Assets {
   final String twitterSVG =
       kIsWeb ? "social_icons/twitter.svg" : "assets/social_icons/twitter.svg";
   final String profileImage = kIsWeb ? "images/me.jpg" : "assets/images/me.jpg";
+  final String backgroundImage =
+      kIsWeb ? "images/bg.jpg" : "assets/images/bg.jpg";
 }
