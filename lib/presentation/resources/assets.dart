@@ -13,4 +13,9 @@ class Assets {
   final String profileImage = kIsWeb ? "images/me.jpg" : "assets/images/me.jpg";
   final String backgroundImage =
       kIsWeb ? "images/bg.jpg" : "assets/images/bg.jpg";
+
+  // Project Images
+  final String projectWallbay =
+      kIsWeb ? "images/me.jpg" : "assets/images/me.jpg";
+  final String projectTMDB = kIsWeb ? "images/me.jpg" : "assets/images/me.jpg";
 }
