@@ -18,4 +18,12 @@ class Assets {
   final String projectWallbay =
       kIsWeb ? "images/me.jpg" : "assets/images/me.jpg";
   final String projectTMDB = kIsWeb ? "images/me.jpg" : "assets/images/me.jpg";
+
+  // Lottie Animation
+  final String programmingAnimation = kIsWeb
+      ? "animations/programming-computer.json"
+      : "assets/animations/programming-computer.json";
+  final String backgroundAnimation = kIsWeb
+      ? "animations/space-coffee.riv"
+      : "assets/animations/space-coffee.riv";
 }

@@ -21,20 +21,18 @@ class _AboutPageState extends State<AboutPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
-              child: Transform(
-                transform: Matrix4.skew(0, 3),
-                child: Container(
-                  margin: EdgeInsets.symmetric(
-                    vertical: sizes.extraLargePadding,
-                    horizontal: sizes.mediumPadding,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: sizes.smallPadding),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    topLeft: Radius.circular(20),
                   ),
-                  height: double.infinity,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(assets.profileImage),
-                      fit: BoxFit.cover,
-                    ),
+                  child: Image(
+                    image: AssetImage(assets.profileImage),
+                    fit: BoxFit.cover,
+                    height: MediaQuery.of(context).size.height * 0.8,
+                    width: double.infinity,
                   ),
                 ),
               ),
@@ -51,11 +49,9 @@ class _AboutPageState extends State<AboutPage> {
                     style: styles.regularText
                         .copyWith(fontSize: sizes.largeFontSize)),
                 SizedBox(height: sizes.mediumPadding),
-                ElevatedButton(
+                OutlinedButton(
                     onPressed: () => launch(Database.viewCV),
-                    child: Text("View CV",
-                        style: styles.regularText
-                            .copyWith(fontSize: sizes.regularFontSize))),
+                    child: const Text("View CV")),
               ],
             )),
           ],
