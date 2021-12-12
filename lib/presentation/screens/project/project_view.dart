@@ -1,42 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/data/db.dart';
+import 'package:portfolio/presentation/resources/res.dart';
+import 'package:portfolio/presentation/screens/project/project_scroll_view_model.dart';
 import 'package:portfolio/presentation/screens/project/widgets/project_detail.dart';
 
-class ProjectPage extends StatefulWidget {
-  const ProjectPage({Key? key}) : super(key: key);
+import 'widgets/project_scroll.dart';
 
-  @override
-  _ProjectPageState createState() => _ProjectPageState();
-}
+class ProjectPage extends ConsumerWidget {
+  final Database _db = Database();
 
-class _ProjectPageState extends State<ProjectPage> {
-  final PageController _controller = PageController();
+  ProjectPage({Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        PageView.builder(
-          controller: _controller,
-          allowImplicitScrolling: false,
-          itemCount: 5,
-          itemBuilder: (context, i) {
-            return ProjectDetail();
-          },
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            TextButton.icon(
-                onPressed: () {},
-                icon: Icon(Icons.arrow_back_ios_new_rounded),
-                label: Text("Prev")),
-            const SizedBox(width: 20),
-            TextButton.icon(
-                onPressed: () {},
-                icon: Icon(Icons.arrow_forward_ios_rounded),
-                label: Text("Next")),
-          ],
-        ),
-      ],
+  Widget build(BuildContext context, WidgetRef ref) {
+    final _pageController =
+        ref.watch(projectScrollProvider).getScrollController;
+    return Container(
+      margin: EdgeInsets.symmetric(
+        vertical: sizes.pagePadding,
+        horizontal: sizes.mediumPadding,
+      ),
+      child: Column(
+        children: [
+          Expanded(
+            child: PageView.builder(
+              controller: _pageController,
+              allowImplicitScrolling: false,
+              itemCount: _db.projects.length,
+              onPageChanged:
+                  ref.read(projectScrollProvider).updateCurrentPageIndex,
+              itemBuilder: (context, i) =>
+                  ProjectDetail(project: _db.projects[i]),
+            ),
+          ),
+          ProjectScroll(),
+        ],
+      ),
     );
   }
 }

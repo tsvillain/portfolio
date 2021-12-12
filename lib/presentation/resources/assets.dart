@@ -16,8 +16,9 @@ class Assets {
 
   // Project Images
   final String projectWallbay =
-      kIsWeb ? "images/me.jpg" : "assets/images/me.jpg";
-  final String projectTMDB = kIsWeb ? "images/me.jpg" : "assets/images/me.jpg";
+      kIsWeb ? "projects/wallbay.png" : "assets/projects/wallbay.png";
+  final String projectTMDB =
+      kIsWeb ? "projects/tmdb.png" : "assets/projects/tmdb.png";
 
   // Lottie Animation
   final String programmingAnimation = kIsWeb
