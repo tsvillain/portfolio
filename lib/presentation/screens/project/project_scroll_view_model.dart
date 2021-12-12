@@ -13,13 +13,13 @@ class ProjectScrollViewModel extends ChangeNotifier {
 
   void next() {
     _pageController.nextPage(
-        duration: const Duration(milliseconds: 1500), curve: Curves.bounceOut);
+        duration: const Duration(milliseconds: 1000), curve: Curves.easeInOut);
     _incrementCurrentPageIndex(true);
   }
 
   void prev() {
     _pageController.previousPage(
-        duration: const Duration(milliseconds: 1500), curve: Curves.ease);
+        duration: const Duration(milliseconds: 1000), curve: Curves.ease);
     _incrementCurrentPageIndex(false);
   }
 

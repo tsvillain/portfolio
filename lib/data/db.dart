@@ -36,18 +36,19 @@ class Database {
       shortDesc: "Wallpaper App developed in Flutter using Pexels API",
       imageurl: AssetImage(assets.projectWallbay),
     ),
-    // ProjectModel(
-    //   title: "Personal Portfolio",
-    //   urls: [
-    //     ProjectUrl(name: "Visit", link: "https://tsvillain.github.io"),
-    //     ProjectUrl(
-    //         name: "Source Code",
-    //         link: "https://github.com/tsvillain/portfolio"),
-    //   ],
-    //   tags: ["Flutter", "Riverpod", "Rive Animation"],
-    //   shortDesc: "My Personal Developer Portfolio made using Flutter ♥️",
-    //   imageurl: AssetImage(assets.projectWallbay),
-    // ),
+    ProjectModel(
+      title: "Personal Portfolio",
+      urls: [
+        ProjectUrl(name: "Visit", link: "https://tsvillain.live"),
+        ProjectUrl(
+            name: "Source Code",
+            link: "https://github.com/tsvillain/portfolio"),
+      ],
+      tags: ["Flutter", "Riverpod", "Rive Animation"],
+      shortDesc:
+          "My Personal Developer Portfolio made using Flutter 💙 and Deployed on Vercel.",
+      imageurl: AssetImage(assets.projectPortfolio),
+    ),
     ProjectModel(
       title: "TMDB Flutter App",
       urls: [

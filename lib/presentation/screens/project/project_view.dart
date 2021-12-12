@@ -18,7 +18,6 @@ class ProjectPage extends ConsumerWidget {
     return Container(
       margin: EdgeInsets.symmetric(
         vertical: sizes.pagePadding,
-        horizontal: sizes.mediumPadding,
       ),
       child: Column(
         children: [
@@ -29,8 +28,10 @@ class ProjectPage extends ConsumerWidget {
               itemCount: _db.projects.length,
               onPageChanged:
                   ref.read(projectScrollProvider).updateCurrentPageIndex,
-              itemBuilder: (context, i) =>
-                  ProjectDetail(project: _db.projects[i]),
+              itemBuilder: (context, i) => Padding(
+                padding: EdgeInsets.symmetric(horizontal: sizes.mediumPadding),
+                child: ProjectDetail(project: _db.projects[i]),
+              ),
             ),
           ),
           ProjectScroll(),
