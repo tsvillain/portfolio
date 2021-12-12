@@ -51,7 +51,10 @@ class _AboutPageState extends State<AboutPage> {
                 SizedBox(height: sizes.mediumPadding),
                 OutlinedButton(
                     onPressed: () => launch(Database.viewCV),
-                    child: const Text("View CV")),
+                    style: OutlinedButton.styleFrom(
+                        side: BorderSide(color: colors.blue)),
+                    child:
+                        Text("View CV", style: TextStyle(color: colors.white))),
               ],
             )),
           ],

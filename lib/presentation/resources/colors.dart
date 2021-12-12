@@ -5,4 +5,5 @@ class AppColors {
   final grey = const Color(0xff928A97);
   final black = const Color(0xff000C24);
   final white = const Color(0xffFFFFFF);
+  final blue = Colors.blue;
 }
