@@ -12,6 +12,6 @@ class HomeScrollController extends ChangeNotifier {
 
   void next() {
     _pageController.nextPage(
-        duration: const Duration(milliseconds: 1500), curve: Curves.bounceOut);
+        duration: const Duration(milliseconds: 800), curve: Curves.easeInOut);
   }
 }

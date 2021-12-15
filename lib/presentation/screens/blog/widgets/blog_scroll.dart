@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio/data/database_helper/db.dart';
+import 'package:portfolio/presentation/controllers/blog_provider.dart';
 import 'package:portfolio/presentation/resources/res.dart';
+import 'package:portfolio/presentation/screens/blog/blog_scroll_view_model.dart';
 
-import '../project_scroll_view_model.dart';
-
-class ProjectScroll extends ConsumerWidget {
-  ProjectScroll({Key? key}) : super(key: key);
-  final Database _db = Database();
+class BlogScroll extends ConsumerWidget {
+  const BlogScroll({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final _scrollController = ref.watch(projectScrollProvider);
+    final _scrollController = ref.watch(blogScrollProvider);
+    final _blogs = ref.watch(blogProvider).mediumBlogs;
 
     return Padding(
       padding: EdgeInsets.all(sizes.smallPadding),
@@ -24,8 +23,8 @@ class ProjectScroll extends ConsumerWidget {
               minHeight: 8,
               backgroundColor: Colors.white30,
               color: Colors.green,
-              value: (_scrollController.currentPageViewIndex + 1) /
-                  _db.projects.length,
+              value:
+                  (_scrollController.currentPageViewIndex + 1) / _blogs.length,
             ),
           )),
           const SizedBox(width: 20),
@@ -42,8 +41,8 @@ class ProjectScroll extends ConsumerWidget {
           ),
           const SizedBox(width: 10),
           Visibility(
-            visible: _scrollController.currentPageViewIndex !=
-                (_db.projects.length - 1),
+            visible:
+                _scrollController.currentPageViewIndex != (_blogs.length - 1),
             child: TextButton(
                 onPressed: _scrollController.next,
                 child: Row(
