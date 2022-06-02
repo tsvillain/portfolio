@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/domain/models/medium_blog_model.dart';
 import 'package:portfolio/presentation/resources/res.dart';
+import 'package:portfolio/presentation/screens/responsive_layout.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlogDetail extends StatelessWidget {
@@ -12,8 +13,6 @@ class BlogDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size _size = MediaQuery.of(context).size;
-    bool _landscape = _size.width > _size.height;
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
@@ -23,33 +22,42 @@ class BlogDetail extends StatelessWidget {
             color: Colors.white10,
             borderRadius: BorderRadius.circular(20),
           ),
-          child: _landscape
-              ? Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    _blogImage(),
-                    SizedBox(width: sizes.pagePadding),
-                    _blogInfo(),
-                    SizedBox(width: sizes.smallPadding),
-                  ],
-                )
-              : Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    _blogImage(),
-                    SizedBox(width: sizes.pagePadding),
-                    _blogInfo(),
-                    SizedBox(width: sizes.smallPadding),
-                  ],
-                ),
+          child: ReponsiveLayout(
+            desktopBody: _desktop(),
+            mobileBody: _mobile(),
+          ),
         ),
       ),
     );
   }
 
-  Widget _blogInfo() {
+  Column _mobile() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        _blogImage(),
+        SizedBox(width: sizes.regularPadding),
+        _blogInfo(CrossAxisAlignment.center),
+        SizedBox(width: sizes.smallPadding),
+      ],
+    );
+  }
+
+  Row _desktop() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        _blogImage(),
+        SizedBox(width: sizes.pagePadding),
+        _blogInfo(CrossAxisAlignment.start),
+        SizedBox(width: sizes.smallPadding),
+      ],
+    );
+  }
+
+  Widget _blogInfo(CrossAxisAlignment alignment) {
     return Expanded(
         flex: 3,
         child: Padding(
@@ -57,7 +65,7 @@ class BlogDetail extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: alignment,
               children: [
                 Text(blog.title, style: styles.pageHeading),
                 SizedBox(height: sizes.smallPadding),

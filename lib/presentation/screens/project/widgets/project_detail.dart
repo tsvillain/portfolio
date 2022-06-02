@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/domain/models/projects_model.dart';
 import 'package:portfolio/presentation/resources/res.dart';
+import 'package:portfolio/presentation/screens/responsive_layout.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectDetail extends StatelessWidget {
@@ -12,38 +13,45 @@ class ProjectDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size _size = MediaQuery.of(context).size;
-    bool _landscape = _size.width > _size.height;
     return Container(
       decoration: BoxDecoration(
         color: Colors.white10,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: _landscape
-          ? Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                _projectImage(),
-                SizedBox(width: sizes.pagePadding),
-                _projectInfo(),
-                SizedBox(width: sizes.smallPadding),
-              ],
-            )
-          : Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                _projectImage(),
-                SizedBox(height: sizes.smallPadding),
-                _projectInfo(),
-                SizedBox(height: sizes.smallPadding),
-              ],
-            ),
+      child: ReponsiveLayout(
+        desktopBody: _desktop(),
+        mobileBody: _mobile(),
+      ),
     );
   }
 
-  Expanded _projectInfo() {
+  Column _mobile() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        _projectImage(),
+        SizedBox(height: sizes.regularPadding),
+        _projectInfo(CrossAxisAlignment.center),
+        SizedBox(height: sizes.smallPadding),
+      ],
+    );
+  }
+
+  Row _desktop() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        _projectImage(),
+        SizedBox(width: sizes.pagePadding),
+        _projectInfo(CrossAxisAlignment.start),
+        SizedBox(width: sizes.smallPadding),
+      ],
+    );
+  }
+
+  Expanded _projectInfo(CrossAxisAlignment alignment) {
     return Expanded(
         flex: 3,
         child: Padding(
@@ -51,7 +59,7 @@ class ProjectDetail extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: alignment,
               children: [
                 Text(project.title, style: styles.pageHeading),
                 SizedBox(height: sizes.smallPadding),

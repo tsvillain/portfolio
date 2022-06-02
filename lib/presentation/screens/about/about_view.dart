@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/data/database_helper/db.dart';
 import 'package:portfolio/presentation/resources/res.dart';
 import 'package:portfolio/presentation/screens/custom_widgets/scroll_button.dart';
+import 'package:portfolio/presentation/screens/responsive_layout.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
@@ -9,42 +10,50 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size _size = MediaQuery.of(context).size;
-    bool _landscape = _size.width > _size.height;
     return Stack(
       children: [
-        _landscape
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: sizes.smallPadding),
-                      child: _image(context),
-                    ),
-                  ),
-                  SizedBox(width: sizes.pagePadding),
-                  Expanded(child: _content()),
-                ],
-              )
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: sizes.smallPadding),
-                      child: _image(context),
-                    ),
-                  ),
-                  SizedBox(width: sizes.pagePadding),
-                  Expanded(child: _content()),
-                ],
-              ),
+        ReponsiveLayout(
+          desktopBody: _desktop(context),
+          mobileBody: _mobile(context),
+        ),
         const ScrollIndicator(),
+      ],
+    );
+  }
+
+  Widget _mobile(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: sizes.mediumPadding),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: sizes.smallPadding),
+              child: AspectRatio(aspectRatio: 4 / 3, child: _image(context)),
+            ),
+          ),
+          SizedBox(width: sizes.pagePadding),
+          Expanded(child: _content()),
+        ],
+      ),
+    );
+  }
+
+  Widget _desktop(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: sizes.smallPadding),
+            child: AspectRatio(aspectRatio: 1 / 1, child: _image(context)),
+          ),
+        ),
+        SizedBox(width: sizes.pagePadding),
+        Expanded(child: _content()),
       ],
     );
   }
@@ -57,7 +66,7 @@ class AboutPage extends StatelessWidget {
         Text("About Me", style: styles.pageHeading),
         SizedBox(height: sizes.regularPadding),
         Text(Database.longBio,
-            style: styles.regularText.copyWith(fontSize: sizes.largeFontSize)),
+            style: styles.regularText.copyWith(fontSize: sizes.mediumFontSize)),
         SizedBox(height: sizes.mediumPadding),
         Align(
           alignment: Alignment.topRight,

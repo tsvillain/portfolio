@@ -9,17 +9,22 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    bool isMobile = width < 600;
     return Stack(
       children: [
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment:
+              isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
           children: [
             Text(Database.name, style: styles.developerName),
             SizedBox(height: sizes.regularPadding),
             Text(Database.shortBio, style: styles.shortBio),
             SizedBox(height: sizes.mediumPadding),
             Row(
+              mainAxisAlignment:
+                  isMobile ? MainAxisAlignment.center : MainAxisAlignment.start,
               children: [
                 SocialBtn(url: Database.github, asset: assets.githubSVG),
                 SocialBtn(url: Database.linkedin, asset: assets.linkedinSVG),

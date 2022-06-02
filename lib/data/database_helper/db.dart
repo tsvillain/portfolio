@@ -8,7 +8,7 @@ class Database {
   static const String name = "Tekeshwar Singh";
   static const String shortBio = "Flutter + Back-end Developer";
   static const String longBio =
-      "I am Tekeshwar Singh, also known by username `tsvillain`, currently am in the final year of my BTech.\nI works as Flutter Developer with an interest in backend technologies.";
+      "I am Tekeshwar Singh, also known by username `tsvillain`, I am a BTech Graduate in CSE.\nI am working as Flutter Developer at PixelApps with an interest in backend technologies and blockchain.";
   // links
   static const String instagram = "https://instagram.com/tsvillain";
   static const String medium = "https://instagram.com/tsvillain";
