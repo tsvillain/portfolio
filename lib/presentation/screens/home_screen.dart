@@ -15,6 +15,8 @@ class Home extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final _pageController =
         ref.watch(homeScrollControllerProvider).getHomeScrollController;
+    final Size _size = MediaQuery.of(context).size;
+    bool _landscape = _size.width > _size.height;
     return Scaffold(
       body: Stack(
         children: [
@@ -23,7 +25,9 @@ class Home extends ConsumerWidget {
             fit: BoxFit.cover,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 100),
+            padding: _landscape
+                ? const EdgeInsets.symmetric(horizontal: 100, vertical: 20)
+                : const EdgeInsets.symmetric(vertical: 50, horizontal: 10),
             child: PageView(
               controller: _pageController,
               scrollDirection: Axis.vertical,
@@ -31,7 +35,7 @@ class Home extends ConsumerWidget {
                 const HomePage(),
                 const AboutPage(),
                 ProjectPage(),
-                BlogPage(),
+                const BlogPage(),
               ],
             ),
           ),

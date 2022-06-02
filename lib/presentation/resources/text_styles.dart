@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/presentation/resources/res.dart';
 
 class AppTextStyles {
-  final developerName = GoogleFonts.spartan(
+  final developerName = GoogleFonts.leagueSpartan(
     fontSize: sizes.jumboFontSize,
     fontWeight: FontWeight.w900,
     foreground: Paint()
@@ -12,17 +12,17 @@ class AppTextStyles {
       ..color = colors.white,
   );
 
-  final shortBio = GoogleFonts.spartan(
+  final shortBio = GoogleFonts.leagueSpartan(
     fontSize: sizes.largeFontSize,
     fontWeight: FontWeight.w800,
     // color: Colors.pink,
   );
 
-  final pageHeading = GoogleFonts.spartan(
+  final pageHeading = GoogleFonts.leagueSpartan(
     fontSize: 32,
     color: colors.red,
     fontWeight: FontWeight.bold,
   );
 
-  final regularText = GoogleFonts.spartan();
+  final regularText = GoogleFonts.leagueSpartan();
 }

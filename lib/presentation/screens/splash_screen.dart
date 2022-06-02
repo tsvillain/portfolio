@@ -16,7 +16,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       initializeResources(context);
       initializeRes();
       await ref.read(blogProvider).getMediumBlogs();
