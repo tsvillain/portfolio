@@ -1,4 +1,4 @@
-class MediumBlogModel {
+class MediumBlog {
   String title;
   String pubDate;
 
@@ -8,7 +8,7 @@ class MediumBlogModel {
 
   List<String> categories;
 
-  MediumBlogModel({
+  MediumBlog({
     required this.title,
     required this.pubDate,
     required this.guid,
@@ -17,8 +17,7 @@ class MediumBlogModel {
     required this.categories,
   });
 
-  factory MediumBlogModel.fromJson(Map<String, dynamic> json) =>
-      MediumBlogModel(
+  factory MediumBlog.fromJson(Map<String, dynamic> json) => MediumBlog(
         title: json['title'],
         pubDate: json['pubDate'],
         guid: json['guid'],

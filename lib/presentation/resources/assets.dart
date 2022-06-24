@@ -1,18 +1,12 @@
-class Assets {
-  final String instagramSVG = "assets/social_icons/instagram.svg";
-  final String githubSVG = "assets/social_icons/github.svg";
-  final String linkedinSVG = "assets/social_icons/linkedin.svg";
-  final String twitterSVG = "assets/social_icons/twitter.svg";
-  final String profileImage = "assets/images/me.jpg";
-  final String backgroundImage = "assets/images/bg.jpg";
+// ignore_for_file: constant_identifier_names
 
-  // Project Images
-  final String projectWallbay = "assets/projects/wallbay.png";
-  final String projectTMDB = "assets/projects/tmdb.png";
-  final String projectPortfolio = "assets/projects/portfolio.png";
+const String INSTAGRAM_SVG = "assets/social_icons/instagram.svg";
+const String GITHUB_SVG = "assets/social_icons/github.svg";
+const String LINKEDIN_SVG = "assets/social_icons/linkedin.svg";
+const String TWITTER_SVG = "assets/social_icons/twitter.svg";
+const String PROFILE_IMAGE = "assets/images/me.jpg";
 
-  // Lottie Animation
-  final String programmingAnimation =
-      "assets/animations/programming-computer.json";
-  final String backgroundAnimation = "assets/animations/space-coffee.riv";
-}
+// Project Images
+const String PROJECT_WALLBAY = "assets/projects/wallbay.png";
+const String PROJECT_TMDB = "assets/projects/tmdb.png";
+const String PROJECT_PORTFOLIO = "assets/projects/portfolio.png";

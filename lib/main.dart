@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'presentation/screens/splash_screen.dart';
+import 'package:portfolio/presentation/pages/layout.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tekeshwar Singh',
       theme: ThemeData.dark(),
-      home: const SplashScreen(),
+      home: const Layout(),
     );
   }
 }

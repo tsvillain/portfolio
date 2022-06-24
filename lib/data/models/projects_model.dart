@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ProjectModel {
+class Project {
   final String title;
   final List<ProjectUrl> urls;
   final List<String> tags;
   final String shortDesc;
   final AssetImage imageurl;
 
-  ProjectModel({
+  Project({
     required this.title,
     required this.urls,
     required this.tags,
