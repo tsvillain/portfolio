@@ -9,6 +9,7 @@ class Assets {
   // Project Images
   final String projectWallbay = "assets/projects/wallbay.png";
   final String projectTMDB = "assets/projects/tmdb.png";
+  final String projectNoteKeeper = "assets/projects/note_keeper.png";
   final String projectPortfolio = "assets/projects/portfolio.png";
 
   // Lottie Animation

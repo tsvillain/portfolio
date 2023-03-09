@@ -6,9 +6,9 @@ import 'package:portfolio/presentation/resources/res.dart';
 class Database {
   // Home
   static const String name = "Tekeshwar Singh";
-  static const String shortBio = "Flutter + Back-end Developer";
+  static const String shortBio = "Expert Flutter & Back-end Developer";
   static const String longBio =
-      "I am Tekeshwar Singh, also known by username `tsvillain`, I am a BTech Graduate in CSE.\nI am working as Flutter Developer at PixelApps with an interest in backend technologies and blockchain.";
+      "I am Tekeshwar Singh, also known by username `tsvillain`, I am a BTech Graduate in CSE.\nI am working as Mid Level Flutter Developer at PixelApps with an interest in backend technologies.";
   // links
   static const String instagram = "https://instagram.com/tsvillain";
   static const String medium = "https://instagram.com/tsvillain";
@@ -37,17 +37,19 @@ class Database {
       imageurl: AssetImage(assets.projectWallbay),
     ),
     ProjectModel(
-      title: "Personal Portfolio",
+      title: "Note Keeper",
       urls: [
-        ProjectUrl(name: "Visit", link: "https://tsvillain.live"),
         ProjectUrl(
             name: "Source Code",
-            link: "https://github.com/tsvillain/portfolio"),
+            link: "https://github.com/tsvillain/note_keeper"),
+        ProjectUrl(
+            name: "YouTube",
+            link: "https://www.youtube.com/watch?v=xNO0TCEvcAs"),
       ],
-      tags: ["Flutter", "Riverpod", "Rive Animation"],
+      tags: ["Flutter", "AppWrite", "Riverpod", "Clean Code"],
       shortDesc:
-          "My Personal Developer Portfolio made using Flutter 💙 and Deployed on Vercel.",
-      imageurl: AssetImage(assets.projectPortfolio),
+          "Note Keeper is a Note Creater App build with Flutter backed by AppWrite (An Open-Source Backend Server)",
+      imageurl: AssetImage(assets.projectNoteKeeper),
     ),
     ProjectModel(
       title: "TMDB Flutter App",
@@ -61,6 +63,19 @@ class Database {
       shortDesc:
           "TMDB Flutter App to get trending movies list, check movies details, watch trailer on youtube, search movies.",
       imageurl: AssetImage(assets.projectTMDB),
+    ),
+    ProjectModel(
+      title: "Personal Portfolio",
+      urls: [
+        ProjectUrl(name: "Visit", link: "https://tsvillain.live"),
+        ProjectUrl(
+            name: "Source Code",
+            link: "https://github.com/tsvillain/portfolio"),
+      ],
+      tags: ["Flutter", "Riverpod", "Rive Animation"],
+      shortDesc:
+          "My Personal Developer Portfolio made using Flutter 💙 and Deployed on Vercel.",
+      imageurl: AssetImage(assets.projectPortfolio),
     ),
   ];
 }
