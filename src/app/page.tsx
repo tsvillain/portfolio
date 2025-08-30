@@ -2,102 +2,118 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <h1>WELCOME TO MY PORTFOLIO</h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <section>
+        <h2>ABOUT ME</h2>
+        <p>
+          Hello! I'm Tekeshwar Singh, a Senior Software Engineer with 5+ years
+          of experience architecting and delivering high-impact, full-stack
+          applications for mobile and web. I specialize in creating scalable,
+          distributed systems using Flutter, Node.js, and serverless
+          architectures on AWS and GCP.
+        </p>
+
+        <p>
+          My journey in technology has been driven by measurable impact - I've
+          increased revenue by 30%, boosted developer productivity, and reduced
+          time-to-market by 75%. I believe in writing clean, maintainable code
+          and staying up-to-date with industry best practices while delivering
+          tangible business outcomes across both mobile and web platforms.
+        </p>
+
+        <p>
+          I'm passionate about full-stack development, cloud architecture, and
+          building systems that scale. When I'm not coding, you can find me
+          contributing to open-source projects, mentoring junior developers, or
+          exploring new technologies that push the boundaries of what's possible
+          in mobile and web development.
+        </p>
+      </section>
+
+      <section>
+        <h2>SKILLS & TECHNOLOGIES</h2>
+        <ul>
+          <li>
+            <strong>Languages:</strong> JavaScript, TypeScript, Dart, SQL
+          </li>
+          <li>
+            <strong>Frontend:</strong> React, Next.js, Flutter, Riverpod
+          </li>
+          <li>
+            <strong>Backend:</strong> Node.js, Express.js, REST APIs, Serverless
+            Functions
+          </li>
+          <li>
+            <strong>Cloud & DevOps:</strong> AWS, GCP (Serverless), Firebase,
+            Docker, GitHub Actions, CodeMagic, CI/CD
+          </li>
+          <li>
+            <strong>Databases & APIs:</strong> MongoDB, Stripe API, OpenAI API,
+            PostgreSQL
+          </li>
+          <li>
+            <strong>Tools:</strong> Git
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>EDUCATION</h2>
+        <p>
+          <strong>B.E. in Computer Science</strong>
+          <br />
+          Parul University, Gujarat, IN
+          <br />
+          2019 – 2022
+          <br />
+          Recipient of SOIC Hackathon 2020 project grant
+        </p>
+        <p>
+          <strong>High School Diploma in Computer Science</strong>
+          <br />
+          Gujarat Technical University, Gujarat, IN
+          <br />
+          2016 – 2019
+          <br />
+          1st Runner-up in Prakalp Festival for final year project
+        </p>
+      </section>
+
+      <section>
+        <h2>KEY ACHIEVEMENTS</h2>
+        <ul>
+          <li>
+            Increased revenue by 30% through strategic A/B testing and
+            subscription systems
+          </li>
+          <li>
+            Reduced time-to-market by 75% with rapid prototyping frameworks
+          </li>
+          <li>
+            Reduced new project setup time from 4 days to 2 hours with CLI
+            automation
+          </li>
+          <li>
+            Tripled user conversion rates through optimized paywall systems
+          </li>
+          <li>Reduced partner data migration time from weeks to hours</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>INTERESTS</h2>
+        <p>
+          I'm passionate about full-stack development, serverless architectures,
+          and building scalable systems that can handle millions of users. I
+          enjoy working with emerging technologies like AI/ML integration,
+          real-time data synchronization, and cross-platform development. I also
+          believe in giving back to the community through mentoring, knowledge
+          sharing, and contributing to the Flutter, Node.js, and React
+          ecosystems.
+        </p>
+      </section>
     </div>
   );
 }
