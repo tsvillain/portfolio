@@ -60,6 +60,39 @@ export default function Home() {
       </section>
 
       <section>
+        <h2>WORK EXPERIENCE</h2>
+        <div>
+          <h3>Senior Software Engineer</h3>
+          <p><strong>Breakthrough</strong> - New York, NY (Remote) | July 2023 – Present</p>
+          <p>
+            Leading full-stack development for mobile and web platforms. Specializing in Flutter, Node.js, 
+            and serverless architectures on GCP. Key achievements include 30% revenue increase through 
+            subscription systems, 75% reduction in time-to-market, and architecting real-time data 
+            synchronization across multiple platforms.
+          </p>
+        </div>
+
+        <div>
+          <h3>Senior Flutter Developer</h3>
+          <p><strong>PixelApps</strong> - Ahmedabad, IN (Hybrid) | May 2021 – July 2023</p>
+          <p>
+            Led mobile development initiatives and established engineering best practices. Co-designed 
+            Clean Architecture standards, mentored junior developers, and developed rapid prototyping 
+            frameworks that accelerated development lifecycle by 75%.
+          </p>
+        </div>
+
+        <div>
+          <h3>Expert Flutter Developer (Part-Time Contract)</h3>
+          <p><strong>Pingolearn</strong> - Pune, IN (Remote) | Feb 2022 – Aug 2022</p>
+          <p>
+            Developed core features for an AI-powered language application serving 700,000+ users. 
+            Implemented subscription systems and AI-powered grammar detection engines using OpenAI integration.
+          </p>
+        </div>
+      </section>
+
+      <section>
         <h2>EDUCATION</h2>
         <p>
           <strong>B.E. in Computer Science</strong>
