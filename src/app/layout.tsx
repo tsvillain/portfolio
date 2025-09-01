@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import MobileDialog from "./components/MobileDialog";
 
 export const metadata: Metadata = {
   title: "Tekeshwar Singh - Senior Software Engineer Portfolio",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <MobileDialog />
         <nav>
           <div className="container">
             <div className="nav-title">PORTFOLIO SYSTEM v1.0</div>
