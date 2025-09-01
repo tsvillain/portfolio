@@ -92,7 +92,7 @@ async function ArticlesList() {
 
   if (articles.length === 0) {
     return (
-      <div>
+      <div className="retro-card">
         <p>Unable to load articles at the moment. Please try again later.</p>
       </div>
     );
@@ -139,13 +139,19 @@ export default function MediumArticles() {
 
       <Suspense
         fallback={
-          <div>
+          <div className="retro-card">
             <p>Loading articles...</p>
           </div>
         }
       >
         <ArticlesList />
       </Suspense>
+
+      <section className="contact-info">
+        <h2>ENJOYED THE ARTICLES?</h2>
+        <p>Let's discuss technology and share knowledge!</p>
+        <a href="/contact" className="retro-button">LET'S TALK TECH</a>
+      </section>
     </div>
   );
 }

@@ -17,6 +17,7 @@ export default function RootLayout({
       <body>
         <nav>
           <div className="container">
+            <div className="nav-title">PORTFOLIO SYSTEM v1.0</div>
             <ul>
               <li>
                 <a href="/">HOME</a>

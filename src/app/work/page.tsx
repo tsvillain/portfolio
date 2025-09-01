@@ -173,6 +173,12 @@ export default function WorkExperience() {
           </ul>
         </div>
       </section>
+
+      <section className="contact-info">
+        <h2>INTERESTED IN WORKING TOGETHER?</h2>
+        <p>Let's discuss how I can contribute to your next project!</p>
+        <a href="/contact" className="retro-button">CONTACT ME</a>
+      </section>
     </div>
   );
 }

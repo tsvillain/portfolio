@@ -59,6 +59,14 @@ export default function LinkedInRecommendations() {
           <strong>- Sabil Bakhar, Founder - Knight Bite</strong>
         </blockquote>
       </section>
+
+      <section className="contact-info">
+        <h2>READY TO JOIN THEM?</h2>
+        <p>Let's work together and add your testimonial to this list!</p>
+        <a href="/contact" className="retro-button">
+          GET STARTED
+        </a>
+      </section>
     </div>
   );
 }

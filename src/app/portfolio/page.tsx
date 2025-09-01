@@ -86,6 +86,7 @@ export default function Portfolio() {
               href="https://github.com/tsvillain/Wallbay"
               target="_blank"
               rel="noopener noreferrer"
+              className="retro-button"
             >
               View on GitHub
             </a>
@@ -156,6 +157,7 @@ export default function Portfolio() {
               href="https://github.com/tsvillain/minifyurl"
               target="_blank"
               rel="noopener noreferrer"
+              className="retro-button"
             >
               View on GitHub
             </a>
@@ -182,6 +184,7 @@ export default function Portfolio() {
               href="https://github.com/tsvillain/note_keeper"
               target="_blank"
               rel="noopener noreferrer"
+              className="retro-button"
             >
               View on GitHub
             </a>
@@ -208,6 +211,7 @@ export default function Portfolio() {
               href="https://github.com/tsvillain/24h-stories"
               target="_blank"
               rel="noopener noreferrer"
+              className="retro-button"
             >
               View on GitHub
             </a>
@@ -234,6 +238,7 @@ export default function Portfolio() {
               href="https://github.com/tsvillain/TMDB-movie-app"
               target="_blank"
               rel="noopener noreferrer"
+              className="retro-button"
             >
               View on GitHub
             </a>
@@ -243,35 +248,43 @@ export default function Portfolio() {
 
       <section>
         <h2>SKILLS DEMONSTRATED</h2>
-        <ul>
-          <li>
-            <strong>Frontend Development:</strong> React, Next.js, Flutter,
-            Cross-platform Development, Offline Capabilities
-          </li>
-          <li>
-            <strong>Backend Development:</strong> Node.js, Express.js,
-            Serverless Architecture, API Development, CLI Tools
-          </li>
-          <li>
-            <strong>Cloud & DevOps:</strong> AWS, Google Cloud Platform,
-            Firebase, Serverless Computing, Docker, CI/CD
-          </li>
-          <li>
-            <strong>Databases & APIs:</strong> MongoDB, Stripe API, RevenueCat,
-            OpenAI API, PostgreSQL
-          </li>
-          <li>
-            <strong>AI Integration:</strong> OpenAI API, LLM Integration,
-            Real-time Processing
-          </li>
-          <li>
-            <strong>Architecture:</strong> Clean Architecture, Event-driven
-            Systems, Microservices
-          </li>
-          <li>
-            <strong>Tools:</strong> Git, GitHub Actions, CodeMagic
-          </li>
-        </ul>
+        <div className="retro-card">
+          <ul>
+            <li>
+              <strong>Frontend Development:</strong> React, Next.js, Flutter,
+              Cross-platform Development, Offline Capabilities
+            </li>
+            <li>
+              <strong>Backend Development:</strong> Node.js, Express.js,
+              Serverless Architecture, API Development, CLI Tools
+            </li>
+            <li>
+              <strong>Cloud & DevOps:</strong> AWS, Google Cloud Platform,
+              Firebase, Serverless Computing, Docker, CI/CD
+            </li>
+            <li>
+              <strong>Databases & APIs:</strong> MongoDB, Stripe API, RevenueCat,
+              OpenAI API, PostgreSQL
+            </li>
+            <li>
+              <strong>AI Integration:</strong> OpenAI API, LLM Integration,
+              Real-time Processing
+            </li>
+            <li>
+              <strong>Architecture:</strong> Clean Architecture, Event-driven
+              Systems, Microservices
+            </li>
+            <li>
+              <strong>Tools:</strong> Git, GitHub Actions, CodeMagic
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="contact-info">
+        <h2>LIKE WHAT YOU SEE?</h2>
+        <p>Let's discuss your next project and bring your ideas to life!</p>
+        <a href="/contact" className="retro-button">START A PROJECT</a>
       </section>
     </div>
   );
