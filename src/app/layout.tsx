@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import MobileDialog from "./components/MobileDialog";
+import { ThemeProvider } from "./components/ThemeProvider";
+import Navigation from "./components/Navigation";
 
 export const metadata: Metadata = {
-  title: "Tekeshwar Singh - Senior Software Engineer Portfolio",
+  title: "Tekeshwar Singh - Senior Software Engineer",
   description:
     "Senior Software Engineer with 5+ years of experience in full-stack development, Flutter, Node.js, and serverless architectures. Specializing in mobile and web development, cloud platforms, and scalable systems.",
 };
@@ -16,35 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <MobileDialog />
-        <nav>
-          <div className="container">
-            <div className="nav-title">PORTFOLIO SYSTEM v1.0</div>
-            <ul>
-              <li>
-                <a href="/">HOME</a>
-              </li>
-              <li>
-                <a href="/work">WORK EXPERIENCE</a>
-              </li>
-              <li>
-                <a href="/portfolio">PORTFOLIO</a>
-              </li>
-              <li>
-                <a href="/recommendations">RECOMMENDATIONS</a>
-              </li>
-              <li>
-                <a href="/articles">TECH ARTICLES</a>
-              </li>
-              <li>
-                <a href="/contact">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <main>
-          <div className="container">{children}</div>
-        </main>
+        <ThemeProvider>
+          <Navigation />
+          <main>
+            <div className="container">{children}</div>
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

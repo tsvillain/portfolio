@@ -1,10 +1,10 @@
 export default function Contact() {
   return (
     <div>
-      <h1>CONTACT</h1>
+      <h1>contact</h1>
 
       <section>
-        <h2>GET IN TOUCH</h2>
+        <h2>get in touch</h2>
         <p>
           I'm always interested in hearing about new opportunities, interesting
           projects, or just connecting with fellow developers. Feel free to
@@ -13,8 +13,8 @@ export default function Contact() {
       </section>
 
       <section>
-        <h2>PRIMARY CONTACT</h2>
-        <div className="contact-info">
+        <h2>primary contact</h2>
+        <div className="terminal-card">
           <p>
             <strong>Email:</strong>
             <a href="mailto:tekeshwarsingh2000@gmail.com">
@@ -55,16 +55,16 @@ export default function Contact() {
       </section>
 
       <section>
-        <h2>AVAILABILITY</h2>
+        <h2>availability</h2>
         <p>
           I'm currently open to new opportunities and freelance projects. I'm
           particularly interested in:
         </p>
-        <div className="retro-card">
+        <div className="terminal-card">
           <ul>
             <li>Senior Software Engineer roles</li>
-            <li>Full-stack development projects (React/Next.js + Node.js)</li>
-            <li>Flutter mobile app development</li>
+            <li>Full-stack development projects (<span className="code">React</span>/<span className="code">Next.js</span> + <span className="code">Node.js</span>)</li>
+            <li><span className="code">Flutter</span> mobile app development</li>
             <li>Serverless and cloud architecture consulting</li>
             <li>Technical mentoring and code review</li>
             <li>Open source contributions</li>
@@ -73,20 +73,20 @@ export default function Contact() {
       </section>
 
       <section>
-        <h2>RESPONSE TIME</h2>
+        <h2>response time</h2>
         <p>
-          I typically respond to emails within 24 hours during weekdays. For
-          urgent matters, please include "URGENT" in the subject line.
+          I typically respond to emails within <span className="code">24 hours</span> during weekdays. For
+          urgent matters, please include <span className="code">"URGENT"</span> in the subject line.
         </p>
       </section>
 
       <section>
-        <h2>LOCATION & TIMEZONE</h2>
-        <div className="retro-card">
+        <h2>location & timezone</h2>
+        <div className="terminal-card">
           <p>
             <strong>Location:</strong> Remote (Based in India)
             <br />
-            <strong>Timezone:</strong> IST (UTC+5:30)
+            <strong>Timezone:</strong> <span className="code">IST (UTC+5:30)</span>
             <br />
             <strong>Available for:</strong> Remote work, global collaborations,
             international projects
@@ -95,8 +95,8 @@ export default function Contact() {
       </section>
 
       <section>
-        <h2>PREFERRED COMMUNICATION</h2>
-        <div className="retro-card">
+        <h2>preferred communication</h2>
+        <div className="terminal-card">
           <ul>
             <li>
               <strong>Initial Contact:</strong> Email
@@ -116,14 +116,14 @@ export default function Contact() {
       </section>
 
       <section>
-        <h2>WHAT TO INCLUDE IN YOUR MESSAGE</h2>
+        <h2>what to include in your message</h2>
         <p>To help me respond more effectively, please include:</p>
-        <div className="retro-card">
+        <div className="terminal-card">
           <ul>
             <li>Brief description of the opportunity or project</li>
             <li>Timeline and scope</li>
             <li>
-              Technologies involved (especially React/Next.js, Node.js, Flutter,
+              Technologies involved (especially <span className="code">React</span>/<span className="code">Next.js</span>, <span className="code">Node.js</span>, <span className="code">Flutter</span>,
               cloud platforms)
             </li>
             <li>Compensation or budget (if applicable)</li>
@@ -133,21 +133,21 @@ export default function Contact() {
       </section>
 
       <section>
-        <h2>CONNECTING</h2>
+        <h2>connecting</h2>
         <p>
           I'm also active in the developer community and would love to connect
           with you on:
         </p>
-        <div className="retro-card">
+        <div className="terminal-card">
           <ul>
             <li>
               <a
                 href="https://github.com/tsvillain"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="retro-button"
+                className="terminal-button"
               >
-                GitHub (@tsvillain)
+                github (@tsvillain)
               </a>{" "}
               - For open source contributions and technical projects
             </li>
@@ -156,9 +156,9 @@ export default function Contact() {
                 href="https://linkedin.com/in/tsvillain"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="retro-button"
+                className="terminal-button"
               >
-                LinkedIn (@tsvillain)
+                linkedin (@tsvillain)
               </a>{" "}
               - For professional networking and opportunities
             </li>
@@ -167,9 +167,9 @@ export default function Contact() {
                 href="https://x.com/tsvillain"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="retro-button"
+                className="terminal-button"
               >
-                X (@tsvillain)
+                x (@tsvillain)
               </a>{" "}
               - For tech discussions and industry news
             </li>
@@ -178,35 +178,35 @@ export default function Contact() {
       </section>
 
       <section>
-        <h2>EXPERTISE AREAS</h2>
+        <h2>expertise areas</h2>
         <p>
           I specialize in the following areas and would be happy to discuss
           opportunities related to:
         </p>
-        <div className="retro-card">
+        <div className="terminal-card">
           <ul>
             <li>
-              <strong>Frontend Development:</strong> React, Next.js, TypeScript,
+              <strong>Frontend Development:</strong> <span className="code">React</span>, <span className="code">Next.js</span>, <span className="code">TypeScript</span>,
               responsive design
             </li>
             <li>
-              <strong>Mobile Development:</strong> Flutter, cross-platform apps,
+              <strong>Mobile Development:</strong> <span className="code">Flutter</span>, cross-platform apps,
               offline capabilities
             </li>
             <li>
-              <strong>Backend Development:</strong> Node.js, Express.js,
+              <strong>Backend Development:</strong> <span className="code">Node.js</span>, <span className="code">Express.js</span>,
               serverless architectures
             </li>
             <li>
-              <strong>Cloud & DevOps:</strong> AWS, GCP, Firebase, serverless
-              computing, Docker
+              <strong>Cloud & DevOps:</strong> <span className="code">AWS</span>, <span className="code">GCP</span>, <span className="code">Firebase</span>, serverless
+              computing, <span className="code">Docker</span>
             </li>
             <li>
-              <strong>Databases & APIs:</strong> MongoDB, PostgreSQL, Stripe
-              integration, OpenAI API
+              <strong>Databases & APIs:</strong> <span className="code">MongoDB</span>, <span className="code">PostgreSQL</span>, <span className="code">Stripe</span>
+              integration, <span className="code">OpenAI API</span>
             </li>
             <li>
-              <strong>AI Integration:</strong> OpenAI API, LLM integration,
+              <strong>AI Integration:</strong> <span className="code">OpenAI API</span>, LLM integration,
               AI-powered features
             </li>
             <li>
@@ -218,7 +218,7 @@ export default function Contact() {
       </section>
 
       <section>
-        <h2>THANK YOU</h2>
+        <h2>thank you</h2>
         <p>
           Thank you for taking the time to visit my portfolio and consider
           reaching out. I look forward to hearing from you and potentially
@@ -228,9 +228,9 @@ export default function Contact() {
       </section>
 
       <section className="contact-info">
-        <h2>READY TO START?</h2>
+        <h2>ready to start?</h2>
         <p>Let's build something amazing together!</p>
-        <a href="mailto:tekeshwarsingh2000@gmail.com" className="retro-button">SEND EMAIL</a>
+        <a href="mailto:tekeshwarsingh2000@gmail.com" className="terminal-button">send email</a>
       </section>
     </div>
   );

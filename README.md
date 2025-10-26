@@ -1,20 +1,22 @@
-# Retro 90s Portfolio Website
+# Terminal Portfolio Website
 
-A minimal personal portfolio website built with Next.js, TypeScript, and TailwindCSS, featuring an authentic early 90s text-based web aesthetic.
+A minimalist personal portfolio website built with Next.js, TypeScript, and CSS, featuring a clean terminal-inspired aesthetic with modern monospace typography.
 
 ## 🎨 Design Philosophy
 
-This portfolio embraces the nostalgic charm of early web design with:
+This portfolio embraces a clean, terminal-inspired design with:
 
-- **Text-first approach**: No images or decorative elements
-- **Classic typography**: Monospaced fonts (Courier New, Source Code Pro)
-- **Retro color scheme**: Black text on light background with blue hyperlinks
-- **Simple layout**: Top-down structure with proper semantic HTML
-- **Subtle retro effects**: CRT scanline overlay and pixelated textures
+- **Text-first approach**: Minimalist design focused on content
+- **Terminal aesthetic**: Monospace fonts (JetBrains Mono) with terminal-style prompts
+- **Modern color scheme**: Dark theme with light text and accent colors
+- **Clean layout**: Simple structure with proper semantic HTML
+- **Responsive design**: Optimized for mobile, tablet, and desktop
 
 ## 🚀 Features
 
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **Theme Support**: Light, dark, and system theme options with persistence
+- **Terminal Navigation**: Clean navigation with active state indicators
 - **Semantic HTML**: Proper use of headings, paragraphs, and lists
 - **Accessibility**: WCAG compliant with proper contrast and navigation
 - **Fast Performance**: Optimized for speed with minimal dependencies
@@ -32,15 +34,20 @@ src/
 │   ├── articles/page.tsx        # Technical articles
 │   ├── contact/page.tsx         # Contact information
 │   ├── layout.tsx               # Global layout with navigation
-│   └── globals.css              # Retro styling
+│   ├── globals.css              # Terminal styling and theme
+│   └── components/
+│       ├── Navigation.tsx       # Main navigation component
+│       ├── ThemeProvider.tsx    # Theme context provider
+│       └── ThemeSelector.tsx    # Theme toggle component
 ```
 
 ## 🛠️ Technologies Used
 
 - **Framework**: Next.js 14 with App Router
 - **Language**: TypeScript
-- **Styling**: TailwindCSS with custom retro CSS
-- **Fonts**: Courier New, Source Code Pro (Google Fonts)
+- **Styling**: Custom CSS with CSS variables for theming
+- **Fonts**: JetBrains Mono (Google Fonts)
+- **State Management**: React Context for theme management
 - **Deployment**: Vercel
 
 ## 🎯 Pages
@@ -65,7 +72,7 @@ src/
 
 ```bash
 git clone <repository-url>
-cd portfolio-90s
+cd portfolio
 ```
 
 2. Install dependencies:
@@ -103,24 +110,24 @@ Update the content in each page file (`src/app/*/page.tsx`) with your own:
 
 ### Styling
 
-The retro styling is defined in `src/app/globals.css`. Key customization points:
+The terminal styling is defined in `src/app/globals.css`. Key customization points:
 
-- **Colors**: Modify CSS variables in `:root`
-- **Fonts**: Change font-family declarations
+- **Colors**: Modify CSS variables for light/dark themes
+- **Fonts**: Change font-family declarations (JetBrains Mono recommended)
 - **Layout**: Adjust container max-width and spacing
-- **Effects**: Modify or remove the CRT scanline effect
+- **Theme**: Customize light/dark theme colors and system theme behavior
 
 ### Navigation
 
-Update the navigation links in `src/app/layout.tsx` to match your page structure.
+Update the navigation links in `src/app/components/Navigation.tsx` to match your page structure.
 
 ## 📱 Responsive Design
 
 The website is fully responsive with breakpoints:
 
-- **Desktop**: Full layout with horizontal navigation
-- **Tablet**: Adjusted spacing and typography
-- **Mobile**: Stacked navigation and optimized content
+- **Desktop**: Full layout with horizontal navigation and theme selector
+- **Tablet**: Adjusted spacing and typography with responsive navigation
+- **Mobile**: Stacked navigation, optimized content, and mobile-friendly theme toggle
 
 ## ♿ Accessibility
 
@@ -148,36 +155,37 @@ The website is fully responsive with breakpoints:
 1. Build the project: `npm run build`
 2. Upload the `out` directory to any static hosting service
 
-## 🎨 Retro Design Elements
+## 🎨 Terminal Design Elements
 
 ### Typography
 
-- Monospaced fonts for authentic 90s feel
-- Proper heading hierarchy
-- Justified text alignment
+- JetBrains Mono monospace font for terminal aesthetic
+- Proper heading hierarchy with terminal-style prompts
+- Clean line spacing and letter spacing
 
 ### Colors
 
-- Light gray background (#f8f8f8)
-- Black text (#000000)
-- Classic blue links (#0000ff)
-- Accent blue (#0066cc)
+- **Dark Theme**: Dark background with light text and accent colors
+- **Light Theme**: Light background with dark text and accent colors
+- **System Theme**: Automatically follows user's system preference
+- **Accent Colors**: Orange for active states, green for highlights
 
 ### Effects
 
-- Subtle CRT scanline overlay
-- Classic underlined hyperlinks
-- Simple borders and spacing
+- Terminal-style navigation with active state indicators
+- Clean borders and spacing
+- Smooth theme transitions
+- Responsive design with mobile-optimized navigation
 
 ## 📝 Content Guidelines
 
-When customizing the content, maintain the retro aesthetic by:
+When customizing the content, maintain the terminal aesthetic by:
 
-- Using plain text descriptions
-- Avoiding modern UI jargon
-- Keeping links simple and descriptive
+- Using clean, readable text descriptions
+- Keeping content focused and concise
 - Using proper HTML semantics
 - Maintaining consistent formatting
+- Leveraging terminal-style prompts and indicators
 
 ## 🤝 Contributing
 
@@ -189,10 +197,11 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Inspired by early web design aesthetics
+- Inspired by terminal and command-line interfaces
 - Built with modern web technologies
 - Designed for accessibility and performance
+- JetBrains Mono font for authentic terminal feel
 
 ---
 
-**Built with ❤️ and nostalgia for the early days of the web**
+**Built with ❤️ and appreciation for clean, functional design**

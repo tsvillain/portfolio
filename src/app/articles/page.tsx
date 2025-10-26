@@ -92,7 +92,7 @@ async function ArticlesList() {
 
   if (articles.length === 0) {
     return (
-      <div className="retro-card">
+      <div className="terminal-card">
         <p>Unable to load articles at the moment. Please try again later.</p>
       </div>
     );
@@ -101,15 +101,15 @@ async function ArticlesList() {
   return (
     <div>
       <section>
-        <h2>TECHNICAL WRITING</h2>
+        <h2>technical writing</h2>
         <p>
           I regularly write about full-stack development, mobile development,
-          Flutter, serverless architectures, and emerging technologies. Here are
+          <span className="code">Flutter</span>, serverless architectures, and emerging technologies. Here are
           my latest published articles on Medium.
         </p>
 
         {articles.map((article, index) => (
-          <div key={index} className="article-item">
+          <div key={index} className="terminal-card">
             <h3>
               <a href={article.link} target="_blank" rel="noopener noreferrer">
                 {article.title}
@@ -122,7 +122,12 @@ async function ArticlesList() {
             {article.categories && article.categories.length > 0 && (
               <p>
                 <strong>Categories:</strong>{" "}
-                {article.categories.slice(0, 3).join(", ")}
+                {article.categories.slice(0, 3).map(cat => (
+                  <span key={cat} className="code">{cat}</span>
+                )).reduce((prev, curr, index) => [
+                  ...prev,
+                  index === 0 ? curr : <span key={index}> {curr}</span>
+                ], [] as React.ReactNode[])}
               </p>
             )}
           </div>
@@ -135,11 +140,11 @@ async function ArticlesList() {
 export default function MediumArticles() {
   return (
     <div>
-      <h1>MEDIUM ARTICLES</h1>
+      <h1>articles</h1>
 
       <Suspense
         fallback={
-          <div className="retro-card">
+          <div className="terminal-card">
             <p>Loading articles...</p>
           </div>
         }
@@ -147,11 +152,6 @@ export default function MediumArticles() {
         <ArticlesList />
       </Suspense>
 
-      <section className="contact-info">
-        <h2>ENJOYED THE ARTICLES?</h2>
-        <p>Let's discuss technology and share knowledge!</p>
-        <a href="/contact" className="retro-button">LET'S TALK TECH</a>
-      </section>
     </div>
   );
 }
