@@ -25,6 +25,25 @@ export default function Portfolio() {
         </div>
 
         <div className="project-item">
+          <h3>Stripe Payment Backend API</h3>
+          <p>
+            Production-ready Stripe payment backend API for multi-tenant SaaS. Handles subscriptions, one-time payments, coupons, analytics, and financial operations. Supports connected accounts (Stripe Connect) and includes webhook processing, MRR tracking, and analytics.
+          </p>
+          <p>
+            <strong>Technologies:</strong> <span className="code">TypeScript</span>, <span className="code">Node.js</span>, <span className="code">Express.js 5</span>,
+            <span className="code">Prisma ORM</span>, <span className="code">PostgreSQL</span>, <span className="code">Stripe API (v18.3.0)</span>,
+            <span className="code">Firebase Admin SDK</span>, <span className="code">Zod</span>, <span className="code">AWS Lambda</span>,
+            <span className="code">AWS SQS FIFO</span>, <span className="code">Docker</span>, <span className="code">PM2</span>
+          </p>
+          <p>
+            <strong>Impact:</strong> Financial operations: processes payments, subscriptions, refunds, and disputes. Analytics: MRR calculation, revenue tracking, churn analysis, trial conversion metrics. Scalability: serverless webhook processing via AWS Lambda and SQS. Multi-tenancy: supports multiple connected accounts with isolated data. Production-ready: Dockerized deployment, error handling, logging, and monitoring. Data integrity: webhook idempotency, transaction tracking, and audit trails.
+          </p>
+          <p>
+            <strong>Key Features:</strong> Subscription management (recurring and lifetime), coupon and promotion code system, payment processing (subscriptions, one-time, gift purchases), dispute and refund management, real-time analytics and MRR snapshots, webhook event processing with retry logic, support tools for customer service operations.
+          </p>
+        </div>
+
+        <div className="project-item">
           <h3>Serverless Data Synchronization System</h3>
           <p>
             Architected a serverless, event-driven system on <span className="code">GCP</span> to synchronize

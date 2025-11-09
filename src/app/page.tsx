@@ -84,10 +84,10 @@ export default function Home() {
             Specializing in <span className="code">Flutter</span>,{" "}
             <span className="code">Node.js</span>, and serverless architectures
             on
-            <span className="code">GCP</span>. Key achievements include 30%
+            <span className="code">GCP</span> and <span className="code">AWS</span>. Key achievements include 30%
             revenue increase through subscription systems, 75% reduction in
-            time-to-market, and architecting real-time data synchronization
-            across multiple platforms.
+            time-to-market, architecting real-time data synchronization
+            across multiple platforms, and developing a production-ready Stripe payment backend API for multi-tenant SaaS with serverless webhook processing, MRR tracking, and comprehensive analytics.
           </p>
         </div>
 

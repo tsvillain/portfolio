@@ -195,15 +195,14 @@ export default function Contact() {
             </li>
             <li>
               <strong>Backend Development:</strong> <span className="code">Node.js</span>, <span className="code">Express.js</span>,
-              serverless architectures
+              serverless architectures, payment processing systems (Stripe API), multi-tenant SaaS backends
             </li>
             <li>
-              <strong>Cloud & DevOps:</strong> <span className="code">AWS</span>, <span className="code">GCP</span>, <span className="code">Firebase</span>, serverless
-              computing, <span className="code">Docker</span>
+              <strong>Cloud & DevOps:</strong> <span className="code">AWS</span> (<span className="code">Lambda</span>, <span className="code">SQS FIFO</span>), <span className="code">GCP</span>, <span className="code">Firebase</span>, serverless
+              computing, <span className="code">Docker</span>, <span className="code">PM2</span>
             </li>
             <li>
-              <strong>Databases & APIs:</strong> <span className="code">MongoDB</span>, <span className="code">PostgreSQL</span>, <span className="code">Stripe</span>
-              integration, <span className="code">OpenAI API</span>
+              <strong>Databases & APIs:</strong> <span className="code">MongoDB</span>, <span className="code">PostgreSQL</span>, <span className="code">Prisma ORM</span>, <span className="code">Stripe API</span> (payment processing, subscriptions, webhooks, Stripe Connect), <span className="code">OpenAI API</span>
             </li>
             <li>
               <strong>AI Integration:</strong> <span className="code">OpenAI API</span>, LLM integration,

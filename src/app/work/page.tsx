@@ -44,6 +44,9 @@ export default function WorkExperience() {
               data migration time from weeks to hours, facilitating seamless
               onboarding for large-scale enterprise clients
             </li>
+            <li>
+              Architected and developed a production-ready Stripe payment backend API for multi-tenant SaaS, handling subscriptions, one-time payments, coupons, analytics, and financial operations. Implemented serverless webhook processing via <span className="code">AWS Lambda</span> and <span className="code">SQS FIFO</span>, MRR tracking, and multi-tenant support with Stripe Connect. The system includes comprehensive analytics, dispute management, and production-ready deployment with <span className="code">Docker</span>, error handling, and monitoring
+            </li>
           </ul>
         </div>
 
@@ -164,6 +167,9 @@ export default function WorkExperience() {
             </li>
             <li>
               Created <span className="code">CLI</span> tools for automated white-label product configuration
+            </li>
+            <li>
+              Built production-ready Stripe payment backend API with multi-tenant SaaS support, serverless webhook processing, MRR tracking, and comprehensive analytics
             </li>
           </ul>
         </div>
