@@ -18,7 +18,7 @@ export default async function Home() {
   const skillCategories = [
     { name: "Frontend", items: skills.frontend, icon: <Layers size={24} /> },
     { name: "Backend & APIs", items: [...skills.backend, ...skills.payment_apis.slice(0, 3)], icon: <Server size={24} /> },
-    { name: "Mobile", items: skills.languages.filter(l => l === "Dart").concat(skills.frontend.filter(f => f === "Flutter" || f === "Riverpod")), icon: <Code size={24} /> },
+    { name: "Mobile", items: [...skills.languages.filter(l => l === "Dart"), ...skills.frontend.filter(f => f === "Flutter" || f === "Riverpod")], icon: <Code size={24} /> },
     { name: "Cloud & DevOps", items: skills.cloud, icon: <Cloud size={24} /> },
     { name: "Architecture", items: skills.architecture, icon: <Database size={24} /> },
     { name: "Payment Systems", items: skills.payment_apis.filter(p => p.includes("Stripe") || p.includes("RevenueCat")), icon: <Wallet size={24} /> },

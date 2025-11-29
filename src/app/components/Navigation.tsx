@@ -10,7 +10,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
-  const moreMenuRef = useRef<HTMLDivElement>(null);
+  const moreMenuRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
