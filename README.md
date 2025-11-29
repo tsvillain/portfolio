@@ -1,25 +1,25 @@
-# Terminal Portfolio Website
+# Portfolio Website
 
-A minimalist personal portfolio website built with Next.js, TypeScript, and CSS, featuring a clean terminal-inspired aesthetic with modern monospace typography.
+A modern, clean personal portfolio website built with Next.js, TypeScript, and Tailwind CSS, featuring a minimalist design with a warm cream and red color scheme.
 
 ## 🎨 Design Philosophy
 
-This portfolio embraces a clean, terminal-inspired design with:
+This portfolio embraces a clean, modern design with:
 
-- **Text-first approach**: Minimalist design focused on content
-- **Terminal aesthetic**: Monospace fonts (JetBrains Mono) with terminal-style prompts
-- **Modern color scheme**: Dark theme with light text and accent colors
+- **Minimalist approach**: Focus on content with clean typography and spacing
+- **Modern aesthetic**: Clean design with warm cream background and red accents
+- **Professional color scheme**: Cream background with red primary colors and stone grays
 - **Clean layout**: Simple structure with proper semantic HTML
 - **Responsive design**: Optimized for mobile, tablet, and desktop
 
 ## 🚀 Features
 
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Theme Support**: Light, dark, and system theme options with persistence
-- **Terminal Navigation**: Clean navigation with active state indicators
+- **Modern Navigation**: Fixed navigation with smooth scrolling and mobile menu
+- **Component-based Architecture**: Reusable components for projects, experience, and sections
 - **Semantic HTML**: Proper use of headings, paragraphs, and lists
 - **Accessibility**: WCAG compliant with proper contrast and navigation
-- **Fast Performance**: Optimized for speed with minimal dependencies
+- **Fast Performance**: Optimized for speed with Next.js and minimal dependencies
 - **SEO Friendly**: Proper meta tags and structured content
 
 ## 📁 Project Structure
@@ -32,32 +32,41 @@ src/
 │   ├── portfolio/page.tsx       # Projects showcase
 │   ├── recommendations/page.tsx # LinkedIn recommendations
 │   ├── articles/page.tsx        # Technical articles
+│   ├── games/page.tsx           # Games showcase
 │   ├── contact/page.tsx         # Contact information
 │   ├── layout.tsx               # Global layout with navigation
-│   ├── globals.css              # Terminal styling and theme
+│   ├── globals.css              # Global styles and Tailwind config
 │   └── components/
 │       ├── Navigation.tsx       # Main navigation component
-│       ├── ThemeProvider.tsx    # Theme context provider
-│       └── ThemeSelector.tsx    # Theme toggle component
+│       ├── Hero.tsx             # Hero section component
+│       ├── Section.tsx           # Section wrapper component
+│       ├── ProjectCard.tsx      # Project card component
+│       └── ExperienceCard.tsx   # Experience card component
+├── data/
+│   └── content.ts              # Content data and configuration
+└── lib/
+    └── medium.ts               # Medium RSS feed integration
 ```
 
 ## 🛠️ Technologies Used
 
-- **Framework**: Next.js 14 with App Router
+- **Framework**: Next.js 15.5.2 with App Router
 - **Language**: TypeScript
-- **Styling**: Custom CSS with CSS variables for theming
-- **Fonts**: JetBrains Mono (Google Fonts)
-- **State Management**: React Context for theme management
+- **Styling**: Tailwind CSS v4 with custom CSS variables
+- **Fonts**: Inter (primary) and JetBrains Mono (code) from Google Fonts
+- **Icons**: Lucide React
+- **RSS Parsing**: xml2js for Medium article feeds
 - **Deployment**: Vercel
 
 ## 🎯 Pages
 
-1. **Home** - Introduction and about me
+1. **Home** - Introduction and about me with hero section
 2. **Work Experience** - Professional roles and achievements
 3. **Portfolio** - Featured projects with GitHub links
 4. **LinkedIn Recommendations** - Professional testimonials
-5. **Medium Articles** - Technical writing and tutorials
-6. **Contact** - Contact information and availability
+5. **Medium Articles** - Technical writing and tutorials (fetched from RSS)
+6. **Games** - Personal game projects showcase
+7. **Contact** - Contact information and availability
 
 ## 🚀 Getting Started
 
@@ -110,12 +119,12 @@ Update the content in each page file (`src/app/*/page.tsx`) with your own:
 
 ### Styling
 
-The terminal styling is defined in `src/app/globals.css`. Key customization points:
+The styling is defined in `src/app/globals.css` using Tailwind CSS v4. Key customization points:
 
-- **Colors**: Modify CSS variables for light/dark themes
-- **Fonts**: Change font-family declarations (JetBrains Mono recommended)
-- **Layout**: Adjust container max-width and spacing
-- **Theme**: Customize light/dark theme colors and system theme behavior
+- **Colors**: Modify CSS variables in the `:root` selector (primary, secondary, text, background colors)
+- **Fonts**: Change font-family declarations in the `@theme` block (Inter and JetBrains Mono)
+- **Layout**: Adjust container max-width and spacing in utility classes
+- **Components**: Customize card, button, and tag styles
 
 ### Navigation
 
@@ -125,9 +134,9 @@ Update the navigation links in `src/app/components/Navigation.tsx` to match your
 
 The website is fully responsive with breakpoints:
 
-- **Desktop**: Full layout with horizontal navigation and theme selector
+- **Desktop**: Full layout with horizontal navigation and dropdown menu
 - **Tablet**: Adjusted spacing and typography with responsive navigation
-- **Mobile**: Stacked navigation, optimized content, and mobile-friendly theme toggle
+- **Mobile**: Hamburger menu with stacked navigation and optimized content
 
 ## ♿ Accessibility
 
@@ -155,37 +164,39 @@ The website is fully responsive with breakpoints:
 1. Build the project: `npm run build`
 2. Upload the `out` directory to any static hosting service
 
-## 🎨 Terminal Design Elements
+## 🎨 Design Elements
 
 ### Typography
 
-- JetBrains Mono monospace font for terminal aesthetic
-- Proper heading hierarchy with terminal-style prompts
-- Clean line spacing and letter spacing
+- Inter font for primary text (clean, modern sans-serif)
+- JetBrains Mono for code snippets and technical content
+- Proper heading hierarchy with optimized letter spacing
+- Clean line spacing and readable font sizes
 
 ### Colors
 
-- **Dark Theme**: Dark background with light text and accent colors
-- **Light Theme**: Light background with dark text and accent colors
-- **System Theme**: Automatically follows user's system preference
-- **Accent Colors**: Orange for active states, green for highlights
+- **Primary**: Red (#dc2626) for links, buttons, and accents
+- **Background**: Warm cream (#fdfbf7) for page background
+- **Text**: Stone grays for primary and secondary text
+- **Cards**: White backgrounds with subtle borders
+- **Hover States**: Smooth color transitions on interactive elements
 
 ### Effects
 
-- Terminal-style navigation with active state indicators
-- Clean borders and spacing
-- Smooth theme transitions
+- Fixed navigation with backdrop blur on scroll
+- Smooth hover transitions on cards and buttons
+- Mobile-friendly dropdown menu with animations
 - Responsive design with mobile-optimized navigation
 
 ## 📝 Content Guidelines
 
-When customizing the content, maintain the terminal aesthetic by:
+When customizing the content, maintain the clean aesthetic by:
 
 - Using clean, readable text descriptions
 - Keeping content focused and concise
 - Using proper HTML semantics
 - Maintaining consistent formatting
-- Leveraging terminal-style prompts and indicators
+- Leveraging component-based architecture for consistency
 
 ## 🤝 Contributing
 
@@ -197,11 +208,13 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Inspired by terminal and command-line interfaces
 - Built with modern web technologies
 - Designed for accessibility and performance
-- JetBrains Mono font for authentic terminal feel
+- Inter and JetBrains Mono fonts for clean typography
+- Tailwind CSS for efficient styling
 
 ---
+
+**Version**: 1.0.0
 
 **Built with ❤️ and appreciation for clean, functional design**

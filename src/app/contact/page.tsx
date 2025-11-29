@@ -1,236 +1,117 @@
+import Section from "../components/Section";
+import { personalInfo } from "../../data/content";
+import { Mail, MapPin, Clock, Github, Linkedin, Twitter, CheckCircle2 } from "lucide-react";
+
 export default function Contact() {
   return (
-    <div>
-      <h1>contact</h1>
+    <div className="pt-24 pb-12">
+      <Section 
+        title="Get in Touch" 
+        subtitle="I'm currently open to new opportunities and collaborations."
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          
+          {/* Contact Info Column */}
+          <div className="lg:col-span-1 space-y-8">
+            <div className="card">
+              <h3 className="text-lg font-bold mb-6">Contact Details</h3>
+              
+              <div className="space-y-6">
+                <a href={`mailto:${personalInfo.email}`} className="flex items-start gap-4 group">
+                  <div className="p-3 bg-red-50 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-stone-500 mb-1">Email</p>
+                    <p className="text-stone-900 font-medium break-all">{personalInfo.email}</p>
+                  </div>
+                </a>
 
-      <section>
-        <h2>get in touch</h2>
-        <p>
-          I'm always interested in hearing about new opportunities, interesting
-          projects, or just connecting with fellow developers. Feel free to
-          reach out!
-        </p>
-      </section>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-stone-50 text-stone-600 rounded-lg">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-stone-500 mb-1">Location</p>
+                    <p className="text-stone-900 font-medium">{personalInfo.location}</p>
+                  </div>
+                </div>
 
-      <section>
-        <h2>primary contact</h2>
-        <div className="terminal-card">
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:tekeshwarsingh2000@gmail.com">
-              tekeshwarsingh2000@gmail.com
-            </a>
-          </p>
-          <p>
-            <strong>LinkedIn:</strong>
-            <a
-              href="https://linkedin.com/in/tsvillain"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin.com/in/tsvillain
-            </a>
-          </p>
-          <p>
-            <strong>GitHub:</strong>
-            <a
-              href="https://github.com/tsvillain"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              github.com/tsvillain
-            </a>
-          </p>
-          <p>
-            <strong>X:</strong>
-            <a
-              href="https://x.com/tsvillain"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              x.com/tsvillain
-            </a>
-          </p>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-stone-50 text-stone-600 rounded-lg">
+                    <Clock size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-stone-500 mb-1">Timezone</p>
+                    <p className="text-stone-900 font-medium">{personalInfo.timezone}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-stone-200">
+                <h4 className="text-sm font-bold uppercase tracking-wider text-stone-500 mb-4">Connect</h4>
+                <div className="flex gap-4">
+                  <a href={personalInfo.social.github} target="_blank" rel="noopener noreferrer" className="p-2 text-stone-500 hover:text-primary hover:bg-red-50 rounded-full transition-colors">
+                    <Github size={20} />
+                  </a>
+                  <a href={personalInfo.social.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 text-stone-500 hover:text-primary hover:bg-red-50 rounded-full transition-colors">
+                    <Linkedin size={20} />
+                  </a>
+                  <a href={personalInfo.social.twitter} target="_blank" rel="noopener noreferrer" className="p-2 text-stone-500 hover:text-primary hover:bg-red-50 rounded-full transition-colors">
+                    <Twitter size={20} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Information Column */}
+          <div className="lg:col-span-2 space-y-12">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Availability & Collaboration</h3>
+              <p className="text-lg text-stone-600 mb-6">
+                I specialize in building complex, high-performance applications. Whether you need a Senior Software Engineer to lead a team, or an expert to architect a scalable solution, I can help.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  "Senior Software Engineer Roles",
+                  "Full-stack Development (React/Node)",
+                  "Flutter Mobile Architecture",
+                  "Cloud & Serverless Consulting",
+                  "Technical Mentoring",
+                  "Open Source Contributions"
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 p-3 bg-stone-50 rounded-lg border border-stone-100">
+                    <CheckCircle2 size={18} className="text-green-500 flex-shrink-0" />
+                    <span className="font-medium text-stone-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold mb-4">What to include in your message</h3>
+              <div className="bg-stone-50 border border-stone-200 rounded-lg p-6">
+                <ul className="list-disc list-inside space-y-2 text-stone-600">
+                  <li>Brief description of the opportunity or project</li>
+                  <li>Timeline and scope expectations</li>
+                  <li>Tech stack details (especially React, Node.js, Flutter, Cloud)</li>
+                  <li>Compensation range or budget</li>
+                  <li>How you found my portfolio</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="flex justify-center md:justify-start">
+               <a href={`mailto:${personalInfo.email}`} className="btn btn-primary text-lg px-8 py-4 shadow-lg shadow-red-500/20">
+                 Send Me an Email
+               </a>
+            </div>
+          </div>
+          
         </div>
-      </section>
-
-      <section>
-        <h2>availability</h2>
-        <p>
-          I'm currently open to new opportunities and freelance projects. I'm
-          particularly interested in:
-        </p>
-        <div className="terminal-card">
-          <ul>
-            <li>Senior Software Engineer roles</li>
-            <li>Full-stack development projects (<span className="code">React</span>/<span className="code">Next.js</span> + <span className="code">Node.js</span>)</li>
-            <li><span className="code">Flutter</span> mobile app development</li>
-            <li>Serverless and cloud architecture consulting</li>
-            <li>Technical mentoring and code review</li>
-            <li>Open source contributions</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2>response time</h2>
-        <p>
-          I typically respond to emails within <span className="code">24 hours</span> during weekdays. For
-          urgent matters, please include <span className="code">"URGENT"</span> in the subject line.
-        </p>
-      </section>
-
-      <section>
-        <h2>location & timezone</h2>
-        <div className="terminal-card">
-          <p>
-            <strong>Location:</strong> Remote (Based in India)
-            <br />
-            <strong>Timezone:</strong> <span className="code">IST (UTC+5:30)</span>
-            <br />
-            <strong>Available for:</strong> Remote work, global collaborations,
-            international projects
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <h2>preferred communication</h2>
-        <div className="terminal-card">
-          <ul>
-            <li>
-              <strong>Initial Contact:</strong> Email
-              (tekeshwarsingh2000@gmail.com)
-            </li>
-            <li>
-              <strong>Technical Discussions:</strong> Email or GitHub Issues
-            </li>
-            <li>
-              <strong>Project Planning:</strong> Video calls (Zoom, Google Meet)
-            </li>
-            <li>
-              <strong>Quick Questions:</strong> LinkedIn messages
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2>what to include in your message</h2>
-        <p>To help me respond more effectively, please include:</p>
-        <div className="terminal-card">
-          <ul>
-            <li>Brief description of the opportunity or project</li>
-            <li>Timeline and scope</li>
-            <li>
-              Technologies involved (especially <span className="code">React</span>/<span className="code">Next.js</span>, <span className="code">Node.js</span>, <span className="code">Flutter</span>,
-              cloud platforms)
-            </li>
-            <li>Compensation or budget (if applicable)</li>
-            <li>How you found me or why you're reaching out</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2>connecting</h2>
-        <p>
-          I'm also active in the developer community and would love to connect
-          with you on:
-        </p>
-        <div className="terminal-card">
-          <ul>
-            <li>
-              <a
-                href="https://github.com/tsvillain"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="terminal-button"
-              >
-                github (@tsvillain)
-              </a>{" "}
-              - For open source contributions and technical projects
-            </li>
-            <li>
-              <a
-                href="https://linkedin.com/in/tsvillain"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="terminal-button"
-              >
-                linkedin (@tsvillain)
-              </a>{" "}
-              - For professional networking and opportunities
-            </li>
-            <li>
-              <a
-                href="https://x.com/tsvillain"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="terminal-button"
-              >
-                x (@tsvillain)
-              </a>{" "}
-              - For tech discussions and industry news
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2>expertise areas</h2>
-        <p>
-          I specialize in the following areas and would be happy to discuss
-          opportunities related to:
-        </p>
-        <div className="terminal-card">
-          <ul>
-            <li>
-              <strong>Frontend Development:</strong> <span className="code">React</span>, <span className="code">Next.js</span>, <span className="code">TypeScript</span>,
-              responsive design
-            </li>
-            <li>
-              <strong>Mobile Development:</strong> <span className="code">Flutter</span>, cross-platform apps,
-              offline capabilities
-            </li>
-            <li>
-              <strong>Backend Development:</strong> <span className="code">Node.js</span>, <span className="code">Express.js</span>,
-              serverless architectures, payment processing systems (Stripe API), multi-tenant SaaS backends
-            </li>
-            <li>
-              <strong>Cloud & DevOps:</strong> <span className="code">AWS</span> (<span className="code">Lambda</span>, <span className="code">SQS FIFO</span>), <span className="code">GCP</span>, <span className="code">Firebase</span>, serverless
-              computing, <span className="code">Docker</span>, <span className="code">PM2</span>
-            </li>
-            <li>
-              <strong>Databases & APIs:</strong> <span className="code">MongoDB</span>, <span className="code">PostgreSQL</span>, <span className="code">Prisma ORM</span>, <span className="code">Stripe API</span> (payment processing, subscriptions, webhooks, Stripe Connect), <span className="code">OpenAI API</span>
-            </li>
-            <li>
-              <strong>AI Integration:</strong> <span className="code">OpenAI API</span>, LLM integration,
-              AI-powered features
-            </li>
-            <li>
-              <strong>Architecture:</strong> Clean Architecture, microservices,
-              event-driven systems
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2>thank you</h2>
-        <p>
-          Thank you for taking the time to visit my portfolio and consider
-          reaching out. I look forward to hearing from you and potentially
-          collaborating on exciting projects that push the boundaries of
-          full-stack development!
-        </p>
-      </section>
-
-      <section className="contact-info">
-        <h2>ready to start?</h2>
-        <p>Let's build something amazing together!</p>
-        <a href="mailto:tekeshwarsingh2000@gmail.com" className="terminal-button">send email</a>
-      </section>
+      </Section>
     </div>
   );
 }
