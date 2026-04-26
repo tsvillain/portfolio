@@ -2,53 +2,45 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { personalInfo } from '../../data/content';
-import { ArrowRight, Github, Linkedin, Terminal } from 'lucide-react';
+import { ArrowRight, Github, Linkedin } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32">
-      <div className="container">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1 max-w-4xl">
-            <div className="flex items-center gap-3 mb-6 text-primary font-medium bg-red-50 w-fit px-4 py-2 rounded-full">
-              <Terminal size={18} />
-              <span>{personalInfo.role}</span>
-            </div>
+    <section className="hero">
+      <div className="container py-20">
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="hero-content max-w-xl">
+            <p className="font-bold mb-2">{personalInfo.role}</p>
+            <h1 className="mb-4">{personalInfo.name}</h1>
+            <p className="text-lg mb-6">{personalInfo.about}</p>
             
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-stone-900">
-              Architecting <span className="text-primary">end-to-end applications</span> for web, mobile, and backend platforms.
-            </h1>
-            
-            <p className="text-lg md:text-xl text-stone-600 mb-10 max-w-3xl leading-relaxed">
-              {personalInfo.about}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/portfolio" className="btn btn-primary text-lg px-8 py-4">
-                View My Work <ArrowRight className="ml-2" size={20} />
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <Link href="/portfolio" className="btn btn-primary">
+                View Work <ArrowRight className="ml-2" size={18} />
               </Link>
-              
-              <Link href="/contact" className="btn btn-outline text-lg px-8 py-4">
-                Get in Touch
+              <Link href="/contact" className="btn btn-outline">
+                Contact
               </Link>
             </div>
 
-            <div className="mt-12 flex gap-6 text-stone-500">
-              <a href={personalInfo.social.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                <Github size={24} />
+            <div className="flex gap-3">
+              <a href={personalInfo.social.github} target="_blank" rel="noopener noreferrer">
+                <Github size={22} />
               </a>
-              <a href={personalInfo.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                <Linkedin size={24} />
+              <a href={personalInfo.social.linkedin} target="_blank" rel="noopener noreferrer">
+                <Linkedin size={22} />
               </a>
             </div>
           </div>
           
-            <div className="relative w-64 h-64 md:w-80 md:h-80 shrink-0">
+          <div className="w-56 h-56 md:w-72 md:h-72 shrink-0" 
+               style={{border: '3px solid black', boxShadow: '6px 6px 0 black'}}>
             <Image
               src={personalInfo.headshot}
               alt="Headshot"
-              fill
-              className="object-cover rounded-full border-4 border-white shadow-lg"
+              width={288}
+              height={288}
+              style={{objectFit: 'cover'}}
               priority
             />
           </div>

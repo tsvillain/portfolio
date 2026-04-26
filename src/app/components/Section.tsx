@@ -10,12 +10,12 @@ interface SectionProps {
 
 export default function Section({ id, title, subtitle, className = "", children }: SectionProps) {
   return (
-    <section id={id} className={`section-padding ${className}`}>
+    <section id={id} className={`section ${className}`}>
       <div className="container">
         {(title || subtitle) && (
-          <div className="mb-12">
-            {title && <h2 className="text-3xl font-bold mb-3">{title}</h2>}
-            {subtitle && <p className="text-lg max-w-2xl">{subtitle}</p>}
+          <div className="mb-8">
+            <h2>{title}</h2>
+            {subtitle && <p className="text-lg mt-2">{subtitle}</p>}
           </div>
         )}
         {children}
@@ -23,4 +23,3 @@ export default function Section({ id, title, subtitle, className = "", children 
     </section>
   );
 }
-

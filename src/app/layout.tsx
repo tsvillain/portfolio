@@ -3,12 +3,8 @@ import "./globals.css";
 import Navigation from "./components/Navigation";
 
 export const metadata: Metadata = {
-  title: "Tekeshwar Singh - Senior Software Engineer",
-  description:
-    "Senior Software Engineer with 5+ years of experience in full-stack development, Flutter, Node.js, and serverless architectures. Specializing in mobile and web development, cloud platforms, and scalable systems.",
-  icons: {
-    icon: "/headshot.webp",
-  },
+  title: "Tekeshwar Singh",
+  description: "Software Engineer portfolio",
 };
 
 export default function RootLayout({
@@ -18,11 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="scanlines">
         <Navigation />
-        <main>
-          <div className="container">{children}</div>
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   );

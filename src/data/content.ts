@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Tekeshwar Singh",
-  role: "Senior Full-Stack Engineer",
+  role: "Senior Software Engineer",
   headshot: "/headshot.webp",
-  headline: "Senior Full-Stack Engineer — Web / Mobile / Backend / Cloud",
+  headline: "Senior Software Engineer — Web / Mobile / Backend / Cloud",
   location: "India",
   timezone: "IST (UTC+5:30)",
   email: "tekeshwarsingh2000@gmail.com",
@@ -12,7 +12,7 @@ export const personalInfo = {
     twitter: "https://x.com/tsvillain",
   },
   about:
-    "Senior Full-Stack Engineer with 5+ years of experience architecting and developing end-to-end applications across web, mobile, and backend platforms. Specialized in React/Next.js frontend development, Node.js backend systems, Flutter mobile apps, and serverless architectures on AWS and GCP. Proven track record of delivering high-impact full-stack solutions that drive business growth, including a 30% revenue increase through optimized payment systems and 75% reduction in time-to-market through automation.",
+    "Senior Software Engineer with 5+ years building full-stack applications. Specialized in Web, mobile, and backends.",
 };
 
 export const skills = {
@@ -27,22 +27,37 @@ export const skills = {
     "Offline Capabilities",
   ],
   backend: ["Node.js", "Express.js 5", "REST APIs", "Serverless Functions"],
-  databases: ["PostgreSQL", "MongoDB", "Prisma ORM", "Mongoose", "SQLite"],
+  databases: [
+    "PostgreSQL",
+    "MongoDB",
+    "Prisma ORM",
+    "Mongoose",
+    "SQLite",
+    "BigQuery",
+  ],
   cloud: [
-    "AWS (Lambda, SQS FIFO, S3)",
+    "AWS (Lambda, SQS FIFO, S3, ECS)",
     "Google Cloud Platform",
     "Firebase",
     "Docker",
     "PM2",
     "CI/CD",
   ],
+  ai_ml: [
+    "Gemini",
+    "Vertex AI",
+    "ElevenLabs",
+    "Vector Embeddings",
+    "Semantic Search",
+    "AI Agents",
+  ],
   payment_apis: [
     "Stripe API (v18.3.0)",
     "Stripe Connect",
     "Webhook Processing",
     "RevenueCat",
-    "OpenAI API",
-    "Pexels API",
+    "Apple Pay",
+    "Google Pay",
   ],
   architecture: [
     "Event-driven Architecture",
@@ -64,24 +79,51 @@ export const skills = {
 
 export const experiences = [
   {
+    company: "xFarm Technologies",
+    role: "Senior Software Engineer",
+    location: "Italy (Remote)",
+    period: "April 2026 – Present",
+    url: "https://www.xfarm.ag/en",
+    description:
+      "Mobile team engineer at xFarm, a comprehensive farm management platform serving 600,000+ farms across 14M+ hectares. Building cross-platform Flutter apps for field management, machinery tracking, and sensor integration.",
+    achievements: [],
+    techStack: [
+      "Flutter",
+      "Dart",
+      "MobX",
+      "Explicit Architecture",
+      "Melos",
+      "Spotify Model",
+    ],
+  },
+  {
     company: "Breakthrough",
     role: "Senior Software Engineer",
     location: "New York, NY (Remote)",
-    period: "July 2023 – Present",
+    period: "July 2023 – April 2026",
     url: "https://breakthroughapps.io/",
     description:
-      "Leading development of high-impact, full-stack applications for mobile and web platforms, specializing in Flutter mobile development, Node.js backend systems, and serverless architectures on GCP and AWS.",
+      "Owned the backend platform powering a white-label wellness app used by 130+ partner creators and 60+ web paywall deployments across Firebase, AWS, and GCP.",
     achievements: [
-      "Engineered a comprehensive subscription and gifting paywall system (Next.js frontend + Node.js backend), boosting revenue by 30% and tripling user conversion rates through strategic A/B testing",
-      "Architected and developed a production-ready Stripe payment backend API for multi-tenant SaaS, handling subscriptions, one-time payments, coupons, analytics, and financial operations with Express.js 5, Prisma ORM, and PostgreSQL",
-      "Implemented serverless webhook processing via AWS Lambda and SQS FIFO queues, ensuring reliable event handling with retry logic and idempotency",
-      "Built comprehensive analytics system with MRR tracking, revenue analytics, churn analysis, and trial conversion metrics",
-      "Architected serverless, event-driven system on GCP to synchronize payment, subscription, and user data across multiple third-party platforms in real-time",
-      "Led the transition to an offline-first mobile architecture using Flutter and Riverpod, enabling full application functionality without internet connection",
-      "Developed high-throughput bulk media uploader using Node.js and AWS S3, reducing partner data migration time from weeks to hours",
-      "Created CLI tool to automate white-label product configuration, reducing new project setup time from 4 days to 2 hours (95% productivity increase)",
+      "Built the AI media indexing and semantic search integration powering in-app content discovery — Firestore-triggered indexing pipeline, BigQuery deduplication, and a Gemini-reranked vector search endpoint serving the mobile apps in real time.",
+      "Built a multi-tenant Stripe billing backend on AWS ECS (Express, TypeScript, Prisma, Postgres) with webhook processing offloaded to Lambda via SQS FIFO, supporting subscriptions, lifetime purchases, and gifting across multiple Stripe Connected Accounts.",
+      "Shipped an AI Smart Search pipeline on EC2 — transcription via ElevenLabs, vector embeddings via Vertex AI, and per-partner system instructions generated through a multi-step Gemini pipeline.",
+      "Built a Next.js Stripe Web Paywall serving 60+ partner brands from one codebase, integrating Stripe Elements, Apple Pay, Google Pay, and RevenueCat.",
+      "Built internal tooling (Firebase automation CLI, bulk media uploader) that turned hours of manual partner-onboarding work into single commands.",
     ],
-    techStack: ["Flutter", "Node.js", "GCP", "AWS", "Stripe API", "Docker"],
+    techStack: [
+      "Flutter",
+      "Node.js",
+      "Express.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "GCP",
+      "AWS",
+      "Firebase",
+      "Stripe API",
+      "Docker",
+    ],
   },
   {
     company: "PixelApps",
@@ -117,23 +159,68 @@ export const experiences = [
 
 export const projects = [
   {
-    title: "Stripe Payment Backend API",
+    title: "AI Media Indexing & Semantic Search",
     type: "Professional",
     description:
-      "Production-ready multi-tenant SaaS payment backend with comprehensive frontend integration. Features subscription management, coupon system, payment processing, dispute management, real-time analytics, and MRR snapshots.",
-    impact:
-      "Processes real financial transactions, provides business intelligence, supports multiple connected accounts, production-ready deployment.",
+      "Firestore-triggered indexing pipeline, BigQuery deduplication, and Gemini-reranked vector search endpoint powering in-app content discovery for 130+ partner creators.",
+    impact: "Real-time content discovery across mobile apps.",
     techStack: [
-      "TypeScript",
+      "Firebase",
+      "BigQuery",
+      "Gemini",
+      "Vector Embeddings",
+      "Semantic Search",
+      "Serverless Functions",
+    ],
+    link: null,
+  },
+  {
+    title: "AI Smart Search Pipeline",
+    type: "Professional",
+    description:
+      "EC2-based pipeline with ElevenLabs transcription, Vertex AI vector embeddings, and per-partner system instructions generated through multi-step Gemini pipeline.",
+    impact: "AI-powered semantic search across partner content.",
+    techStack: [
+      "EC2",
+      "ElevenLabs",
+      "Vertex AI",
+      "Gemini",
       "Node.js",
-      "Express.js 5",
-      "Prisma ORM",
+      "TypeScript",
+    ],
+    link: null,
+  },
+  {
+    title: "Multi-Tenant Stripe Billing Backend",
+    type: "Professional",
+    description:
+      "AWS ECS-hosted billing backend with webhook processing via SQS FIFO. Supports subscriptions, lifetime purchases, and gifting across multiple Stripe Connected Accounts.",
+    impact: "Processes payments for 60+ web paywall deployments.",
+    techStack: [
+      "AWS ECS",
+      "Express.js",
+      "TypeScript",
+      "Prisma",
       "PostgreSQL",
-      "Stripe API (v18.3.0)",
-      "AWS Lambda",
       "AWS SQS FIFO",
-      "Docker",
-      "PM2",
+      "Stripe Connect",
+    ],
+    link: null,
+  },
+  {
+    title: "Stripe Web Paywall",
+    type: "Professional",
+    description:
+      "Next.js Stripe Web Paywall serving 60+ partner brands from one codebase with Stripe Elements, Apple Pay, Google Pay, and RevenueCat integration.",
+    impact: "Single codebase serving 60+ partner brands.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Stripe Elements",
+      "Apple Pay",
+      "Google Pay",
+      "RevenueCat",
     ],
     link: null,
   },
@@ -216,6 +303,15 @@ export const projects = [
       "Configuration Management",
     ],
     link: null,
+  },
+  {
+    title: "pglens",
+    type: "Personal",
+    description:
+      "A simple, powerful PostgreSQL database viewer. Manage connections, explore data, and visualize schemas with ease. Runs as a cross-platform daemon with JSON formatting, multiple tabs, and Spotlight navigation.",
+    impact: "Open-source CLI tool for PostgreSQL management",
+    techStack: ["TypeScript", "Node.js", "PostgreSQL", "CLI"],
+    link: "https://www.pglens.org/",
   },
   {
     title: "Wallbay - Wallpaper App",
