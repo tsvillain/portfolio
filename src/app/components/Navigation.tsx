@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
+import DesignToggle from "./DesignToggle";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -45,6 +46,8 @@ export default function Navigation() {
               {item.label}
             </Link>
           ))}
+          <span style={{ padding: '0 0.5rem', color: 'black' }}>|</span>
+          <DesignToggle />
         </nav>
 
         <button
@@ -68,6 +71,9 @@ export default function Navigation() {
               {item.label}
             </Link>
           ))}
+          <div style={{ padding: '0.75rem' }}>
+            <DesignToggle />
+          </div>
         </div>
       )}
     </header>

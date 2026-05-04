@@ -14,6 +14,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var d=localStorage.getItem('design')||'minimal';document.documentElement.setAttribute('data-design',d);}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="scanlines">
         <Navigation />
         <main>{children}</main>

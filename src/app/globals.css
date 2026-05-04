@@ -187,3 +187,313 @@ a {
 .mint-bg {
   background: var(--bg-mint);
 }
+
+.design-toggle {
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.7rem;
+  border: 2px solid black;
+  background: white;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+
+.design-toggle:hover {
+  background: var(--bg-yellow);
+}
+
+/* Visibility helpers for design-mode-specific content */
+.minimal-intro { display: none; }
+[data-design="minimal"] .minimal-intro { display: block; }
+[data-design="minimal"] .brutal-only { display: none !important; }
+
+/* ============================================================
+   MINIMAL DESIGN — DHH-style classic developer portfolio
+   ============================================================ */
+[data-design="minimal"] {
+  --bg-cream: #ffffff;
+  --bg-yellow: transparent;
+  --bg-pink: transparent;
+  --bg-mint: transparent;
+}
+
+html[data-design="minimal"],
+html[data-design="minimal"] body {
+  background: #ffffff !important;
+  color: #222 !important;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+[data-design="minimal"] main {
+  padding-bottom: 6rem;
+}
+
+[data-design="minimal"] h1,
+[data-design="minimal"] h2,
+[data-design="minimal"] h3 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  color: #111;
+  letter-spacing: -0.005em;
+}
+
+[data-design="minimal"] h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+[data-design="minimal"] h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-style: italic;
+  margin: 0 0 1rem 0;
+  border: none;
+  padding: 0;
+}
+
+[data-design="minimal"] h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+[data-design="minimal"] p {
+  color: #222;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+[data-design="minimal"] a {
+  color: #b91c1c;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+[data-design="minimal"] a:hover {
+  color: #000;
+  background: #fef3c7;
+}
+
+[data-design="minimal"] .container {
+  max-width: 640px;
+  padding: 0 1.5rem;
+}
+
+[data-design="minimal"] .header {
+  position: static;
+  background: transparent;
+  border: none;
+  padding: 2rem 0 1rem;
+}
+
+[data-design="minimal"] .header .container {
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+[data-design="minimal"] .logo {
+  display: none;
+}
+
+[data-design="minimal"] .nav-link {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 0.5rem;
+  font-weight: 400;
+  color: #b91c1c;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+[data-design="minimal"] .nav-link.active {
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: italic;
+}
+
+[data-design="minimal"] .card,
+[data-design="minimal"] .card-flat,
+[data-design="minimal"] .hero-content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 2rem;
+}
+
+[data-design="minimal"] .card-title {
+  border: none;
+  padding: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #111;
+}
+
+[data-design="minimal"] .btn {
+  display: inline;
+  padding: 0;
+  margin-right: 1rem;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  color: #b91c1c !important;
+  text-decoration: underline;
+  font-weight: 400;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+[data-design="minimal"] .btn:active {
+  transform: none;
+}
+
+[data-design="minimal"] .btn svg {
+  display: none;
+}
+
+[data-design="minimal"] .tag {
+  display: inline;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 400;
+  font-style: italic;
+}
+
+[data-design="minimal"] .tag::after {
+  content: " · ";
+  color: #aaa;
+  font-style: normal;
+}
+
+[data-design="minimal"] .tag:last-child::after {
+  content: "";
+}
+
+[data-design="minimal"] .hero {
+  min-height: auto;
+  background: none !important;
+  display: block;
+  padding: 1rem 0 2rem;
+}
+
+[data-design="minimal"] .hero .container > div {
+  display: block !important;
+}
+
+[data-design="minimal"] .hero img,
+[data-design="minimal"] .hero .w-56,
+[data-design="minimal"] .hero [style*="border: 3px solid"] {
+  display: none !important;
+}
+
+[data-design="minimal"] .minimal-intro {
+  margin-top: 1.5rem;
+}
+
+[data-design="minimal"] .minimal-intro p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  color: #222;
+}
+
+[data-design="minimal"] .minimal-intro p.lead {
+  font-size: 1.35rem;
+  line-height: 1.55;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+[data-design="minimal"] .minimal-intro p.lead strong {
+  font-weight: 700;
+}
+
+[data-design="minimal"] .section {
+  padding: 1.5rem 0 2rem;
+}
+
+[data-design="minimal"] .section .mb-8 {
+  margin-bottom: 1rem;
+}
+
+/* Flatten Tailwind grids/flex into prose flow */
+[data-design="minimal"] .grid {
+  display: block !important;
+}
+
+[data-design="minimal"] .flex.justify-between {
+  display: block !important;
+}
+
+[data-design="minimal"] .flex.flex-wrap.gap-2,
+[data-design="minimal"] .flex.flex-wrap.gap-1 {
+  display: block !important;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+[data-design="minimal"] .accent-bg {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-style: italic;
+  color: #555;
+}
+
+[data-design="minimal"] ul.space-y-2 {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.75rem 0 1rem;
+}
+
+[data-design="minimal"] ul.space-y-2 li {
+  margin-bottom: 0.5rem;
+  display: list-item;
+  list-style-type: "— ";
+  padding-left: 0.5rem;
+  margin-left: 1rem;
+}
+
+[data-design="minimal"] ul.space-y-2 li > span:first-child {
+  display: none;
+}
+
+[data-design="minimal"] .design-toggle {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 400;
+  text-transform: lowercase;
+  color: #b91c1c;
+  text-decoration: underline;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+[data-design="minimal"] .design-toggle:hover {
+  background: #fef3c7;
+  color: #000;
+}
+
+[data-design="minimal"] .scanlines::before,
+[data-design="minimal"] .scanlines::after {
+  display: none !important;
+}
