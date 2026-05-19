@@ -2,47 +2,43 @@ import Section from "../components/Section";
 import { personalInfo } from "../../data/content";
 
 export default function Contact() {
+  const channels = [
+    { label: "email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
+    { label: "github", value: "@tsvillain", href: personalInfo.social.github },
+    { label: "linkedin", value: "in/tsvillain", href: personalInfo.social.linkedin },
+    { label: "x", value: "@tsvillain", href: personalInfo.social.twitter },
+  ];
+
   return (
-    <div className="pt-20">
-      <Section title="Contact" subtitle="Let's work together">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="card">
-            <div className="card-title">Get in touch</div>
-            <div className="space-y-4 mt-4">
-              <div>
-                <strong>Email:</strong>
-                <br/>
-                <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
-              </div>
-              <div>
-                <strong>Location:</strong>
-                <br/>
-                <span>{personalInfo.location}</span>
-              </div>
-              <div>
-                <strong>Timezone:</strong>
-                <br/>
-                <span>{personalInfo.timezone}</span>
-              </div>
+    <Section title="Contact" subtitle="let&apos;s build something" kicker="contact">
+      <p className="lede" style={{ marginTop: 0 }}>
+        Open to senior IC roles, contract work, and interesting collaborations.
+        Based in {personalInfo.location} · {personalInfo.timezone}.
+      </p>
+
+      <div className="feature-grid" style={{ marginTop: "2rem" }}>
+        {channels.map((c) => (
+          <a
+            key={c.label}
+            href={c.href}
+            target={c.label === "email" ? undefined : "_blank"}
+            rel="noopener noreferrer"
+            className="feature"
+            style={{ display: "block" }}
+          >
+            <div className="feature-label">{c.label}</div>
+            <div className="feature-title mono" style={{ fontSize: "0.95rem" }}>
+              {c.value}
             </div>
-            <div className="mt-6 flex gap-2">
-              <a href={personalInfo.social.github} className="tag">Github</a>
-              <a href={personalInfo.social.linkedin} className="tag">Linkedin</a>
-            </div>
-          </div>
-          
-          <div className="card-flat mint-bg">
-            <div className="card-title">Skills</div>
-            <div className="grid grid-cols-2 gap-2 mt-4">
-              {["Full-Stack Dev", "Flutter Mobile", "Node.js", "Cloud", "Stripe", "AI/ML"].map(item => (
-                <div key={item} className="tag">{item}</div>
-              ))}
-            </div>
-          </div>
-        </div>
-        
-        <a href={`mailto:${personalInfo.email}`} className="btn btn-primary mt-8">Send Email</a>
-      </Section>
-    </div>
+          </a>
+        ))}
+      </div>
+
+      <div style={{ marginTop: "2rem" }}>
+        <a href={`mailto:${personalInfo.email}`} className="btn btn-primary">
+          Send email →
+        </a>
+      </div>
+    </Section>
   );
 }

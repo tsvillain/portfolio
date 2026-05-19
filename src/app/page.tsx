@@ -6,45 +6,63 @@ import { experiences, projects } from "../data/content";
 import Link from "next/link";
 
 export default async function Home() {
-  const featuredExp = experiences.slice(0, 1);
-  const featuredPro = projects.filter(p => p.type === "Professional").slice(0, 2);
+  const featuredExp = experiences.slice(0, 2);
+  const featuredPro = projects.filter((p) => p.type === "Professional").slice(0, 3);
+
+  const focus = [
+    {
+      label: "Backend",
+      title: "Production-grade",
+      body: "Multi-tenant SaaS, payments infra, event-driven pipelines. Built on AWS ECS, GCP, Firebase.",
+    },
+    {
+      label: "Mobile",
+      title: "Cross-platform",
+      body: "Flutter apps for fleets, farms, wellness. Offline-first, Clean Architecture, Riverpod / MobX.",
+    },
+    {
+      label: "AI",
+      title: "Ship the pipeline",
+      body: "Vector embeddings, semantic search, Gemini reranking. Real-time indexing on Firestore + BigQuery.",
+    },
+  ];
 
   return (
     <div>
       <Hero />
-      
-      <Section title="Skills" subtitle="What I work with">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { name: "FRONTEND", items: ["React", "Next.js", "Flutter"] },
-            { name: "BACKEND", items: ["Node.js", "Express", "TypeScript"] },
-            { name: "CLOUD", items: ["AWS", "GCP", "Firebase"] },
-            { name: "PAYMENTS", items: ["Stripe", "RevenueCat"] },
-          ].map(cat => (
-            <div key={cat.name} className="card-flat">
-              <div className="card-title">{cat.name}</div>
-              <div className="flex flex-wrap gap-1 mt-2">
-                {cat.items.map(item => (
-                  <span key={item} className="tag">{item}</span>
-                ))}
-              </div>
+
+      <Section title="What I focus on" kicker="focus">
+        <div className="feature-grid">
+          {focus.map((f) => (
+            <div key={f.title} className="feature">
+              <div className="feature-label">{f.label}</div>
+              <div className="feature-title">{f.title}</div>
+              <p className="feature-body">{f.body}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      <Section title="Experience" subtitle="Where I've worked">
-        <div className="space-y-6">
-          {featuredExp.map((exp, i) => <ExperienceCard key={i} {...exp} />)}
-          <Link href="/work" className="btn btn-outline">View All</Link>
+      <Section title="Experience" subtitle="where I&apos;ve shipped" kicker="experience">
+        {featuredExp.map((exp, i) => (
+          <ExperienceCard key={exp.company} index={i} {...exp} />
+        ))}
+        <div style={{ marginTop: "1.5rem" }}>
+          <Link href="/work" className="link-arrow">
+            View all experience →
+          </Link>
         </div>
       </Section>
 
-      <Section title="Selected Work" subtitle="Key projects">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {featuredPro.map((p, i) => <ProjectCard key={i} {...p} />)}
+      <Section title="Selected work" subtitle="key projects" kicker="work">
+        {featuredPro.map((p, i) => (
+          <ProjectCard key={p.title} index={i} {...p} />
+        ))}
+        <div style={{ marginTop: "1.5rem" }}>
+          <Link href="/portfolio" className="link-arrow">
+            View all projects →
+          </Link>
         </div>
-        <Link href="/portfolio" className="btn btn-primary mt-8">View All Projects</Link>
       </Section>
     </div>
   );

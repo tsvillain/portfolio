@@ -1,21 +1,32 @@
-import React from 'react';
+import React from "react";
 
 interface SectionProps {
   id?: string;
   title?: string;
   subtitle?: string;
+  kicker?: string;
   className?: string;
   children: React.ReactNode;
 }
 
-export default function Section({ id, title, subtitle, className = "", children }: SectionProps) {
+export default function Section({
+  id,
+  title,
+  subtitle,
+  kicker,
+  className = "",
+  children,
+}: SectionProps) {
   return (
     <section id={id} className={`section ${className}`}>
       <div className="container">
-        {(title || subtitle) && (
-          <div className="mb-8">
-            <h2>{title}</h2>
-            {subtitle && <p className="text-lg mt-2">{subtitle}</p>}
+        {(title || kicker) && (
+          <div className="section-head">
+            <h2 className="section-title">
+              {title}
+              {subtitle && <em> — {subtitle}</em>}
+            </h2>
+            {kicker && <span className="section-kicker">{kicker}</span>}
           </div>
         )}
         {children}

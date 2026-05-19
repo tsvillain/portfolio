@@ -3,21 +3,21 @@ import ProjectCard from "../components/ProjectCard";
 import { projects } from "../../data/content";
 
 export default function Portfolio() {
-  const pro = projects.filter(p => p.type === "Professional");
-  const per = projects.filter(p => p.type === "Personal");
+  const pro = projects.filter((p) => p.type === "Professional");
+  const per = projects.filter((p) => p.type === "Personal");
 
   return (
-    <div className="pt-20">
-      <Section title="Work" subtitle="What I've built">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {pro.map((p, i) => <ProjectCard key={i} {...p} />)}
-        </div>
+    <div>
+      <Section title="Professional" subtitle="shipped at companies" kicker="work · pro">
+        {pro.map((p, i) => (
+          <ProjectCard key={p.title} index={i} {...p} />
+        ))}
       </Section>
 
-      <Section title="Personal" subtitle="Side projects">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {per.map((p, i) => <ProjectCard key={i} {...p} />)}
-        </div>
+      <Section title="Personal" subtitle="open source &amp; side" kicker="work · personal">
+        {per.map((p, i) => (
+          <ProjectCard key={p.title} index={i} {...p} />
+        ))}
       </Section>
     </div>
   );
