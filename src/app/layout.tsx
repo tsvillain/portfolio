@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -27,6 +27,10 @@ export const metadata: Metadata = {
     card: "summary",
     creator: "@tsvillain",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ece9e0",
 };
 
 export default function RootLayout({

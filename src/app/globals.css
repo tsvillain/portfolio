@@ -7,37 +7,76 @@
 }
 
 @theme {
-  --color-accent: #dc2626;
-  --color-ink: #111111;
-  --color-muted: #6b7280;
-  --color-rule: #e5e5e5;
+  --color-paper: #ece9e0;
+  --color-ink: #1a1a1a;
+  --color-muted: #6f6b60;
+  --color-rule: #c7c3b8;
 }
 
 @layer base {
   body {
-    @apply bg-white text-ink font-sans antialiased;
+    @apply bg-paper text-ink font-sans;
     font-size: 17px;
     line-height: 1.65;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    animation: eink-refresh 0.35s steps(1, end) 1;
+    cursor:
+      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='26' viewBox='0 0 20 22'><path d='M3 1 L3 19 L7.5 15 L10.5 21 L13 20 L10 14 L16 14 Z' fill='%231a1a1a' stroke='%23ece9e0' stroke-width='1.2' stroke-linejoin='round'/></svg>")
+        4 1,
+      auto;
+  }
+
+  /* ponytail: fake e-ink pixel grain via CSS noise, no image asset / lib needed */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
   a {
     text-decoration: underline;
-    text-decoration-color: #d4d4d4;
+    text-decoration-color: var(--color-rule);
     text-underline-offset: 3px;
+    cursor:
+      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='20' viewBox='0 0 12 16'><rect x='1' y='1' width='10' height='14' fill='%231a1a1a' stroke='%23ece9e0' stroke-width='1.2'/></svg>")
+        8 9,
+      pointer;
   }
 
   a:hover {
-    color: var(--color-accent);
-    text-decoration-color: currentColor;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    text-decoration: none;
   }
 
   ::selection {
-    background: var(--color-accent);
-    color: #ffffff;
+    background: var(--color-ink);
+    color: var(--color-paper);
   }
 
   h2::before {
     content: "## ";
     color: var(--color-muted);
+  }
+
+  @keyframes eink-refresh {
+    0% {
+      filter: invert(1);
+    }
+    25% {
+      filter: invert(0);
+    }
+    50% {
+      filter: invert(1);
+    }
+    100% {
+      filter: invert(0);
+    }
   }
 }

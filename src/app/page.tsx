@@ -37,7 +37,7 @@ export default function Home() {
           width={112}
           height={112}
           priority
-          className="w-28 h-28 rounded-full"
+          className="w-28 h-28 border border-ink grayscale contrast-125"
         />
         <div>
           <h1 className="font-mono text-3xl font-bold tracking-tight">
