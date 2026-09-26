@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   personalInfo,
   experiences,
@@ -47,9 +48,10 @@ export default function Home() {
             {personalInfo.tagline}
           </p>
           <p className="font-mono text-[13px] text-muted mt-3">
-            {socialLinks.map((s, i) => (
+            <Link href="/blog">blog</Link>
+            {socialLinks.map((s) => (
               <span key={s.label}>
-                {i > 0 && " · "}
+                {" · "}
                 <A href={s.href}>{s.label}</A>
               </span>
             ))}
@@ -131,6 +133,10 @@ export default function Home() {
         writing
       </h2>
       <section className="space-y-4">
+        <p>
+          <Link href="/blog">Blog</Link>: notes on backend, payments, AI, and
+          things I broke in production.
+        </p>
         <p>
           <A href={social.newsletter}>First Token</A>: my newsletter on AI and
           engineering, one useful idea at a time.
