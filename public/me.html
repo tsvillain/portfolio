@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tekeshwar Singh (@tsvillain)</title>
+<meta name="description" content="Engineer shipping AI to prod. Ship or Skip on YouTube, daily AI terms on X, and the First Token newsletter on production AI engineering.">
+<link rel="canonical" href="https://tsvillain.com/me">
+<meta name="theme-color" content="#F3EFE4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' fill='%23FFE600' stroke='%23111' stroke-width='6'/%3E%3Ctext x='32' y='46' font-family='Arial Black,sans-serif' font-size='38' font-weight='900' text-anchor='middle' fill='%23111'%3ET%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tsvillain.com/me">
+<meta property="og:title" content="Tekeshwar Singh (@tsvillain)">
+<meta property="og:description" content="Engineer shipping AI to prod. I judge trending AI repos so you don't have to.">
+<meta property="og:image" content="https://tsvillain.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tekeshwar Singh, @tsvillain: Ship or Skip, First Token, daily AI terms">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tsvillain">
+<meta name="twitter:creator" content="@tsvillain">
+<meta name="twitter:title" content="Tekeshwar Singh (@tsvillain)">
+<meta name="twitter:description" content="Engineer shipping AI to prod. I judge trending AI repos so you don't have to.">
+<meta name="twitter:image" content="https://tsvillain.com/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@500;700&family=Permanent+Marker&family=Space+Grotesk:wght@400;500&display=swap">
+
+<style>
+  :root {
+    --bg: #F3EFE4;
+    --ink: #111;
+    --yellow: #FFE600;
+    --red: #FF3B1F;
+    --head: "Archivo Black", "Arial Black", sans-serif;
+    --body: "Space Grotesk", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { color-scheme: light; }
+  body {
+    min-height: 100vh;
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(rgba(0,0,0,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: var(--ink);
+    font: 400 1rem/1.5 var(--body);
+    overflow-x: hidden;
+  }
+  main { max-width: 480px; margin: 0 auto; padding: 40px 16px 32px; }
+
+  header { text-align: center; margin-bottom: 32px; }
+  .avatar {
+    display: block; width: 120px; height: 120px; margin: 0 auto 20px;
+    border: 4px solid var(--ink); border-radius: 50%;
+    box-shadow: 6px 6px 0 var(--ink); background: var(--yellow);
+    object-fit: cover;
+  }
+  h1 { font: 400 clamp(1.75rem, 8vw, 2.25rem)/1.1 var(--head); letter-spacing: -.01em; }
+  .handle { font: 700 .95rem/1 var(--mono); margin: 10px 0 14px; }
+  .bio { font-size: 1.05rem; max-width: 36ch; margin: 0 auto; }
+
+  ul { list-style: none; padding: 0; display: grid; gap: 16px; }
+  section { margin-top: 32px; }
+  h2 {
+    font: 700 .8rem/1 var(--mono); text-transform: uppercase; letter-spacing: .15em;
+    margin-bottom: 14px;
+  }
+
+  .btn {
+    display: flex; align-items: center; gap: 12px;
+    width: 100%; min-height: 56px; padding: 14px 18px;
+    background: #fff; color: var(--ink);
+    border: 4px solid var(--ink); border-radius: 0;
+    box-shadow: 6px 6px 0 var(--ink);
+    font: 400 1.05rem/1.25 var(--head); text-decoration: none;
+  }
+  .btn:hover, .btn:active { box-shadow: 2px 2px 0 var(--ink); transform: translate(4px, 4px); }
+  .btn:focus-visible { outline: 4px solid var(--red); outline-offset: 4px; }
+  .btn .i { flex: none; width: 1.5em; text-align: center; }
+
+  .featured { background: var(--yellow); font-size: 1.2rem; padding: 20px 18px; min-height: 80px; }
+  .perk { font: 500 .85rem/1.4 var(--mono); margin-top: 14px; padding-left: 4px; }
+  .note {
+    font: 400 1.1rem/1 "Permanent Marker", cursive;
+    transform: rotate(-3deg); margin: 0 0 12px 6px;
+    text-decoration: underline wavy var(--red) 2px; text-underline-offset: 6px;
+  }
+
+  footer {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 48px; padding-top: 20px; border-top: 4px solid var(--ink);
+  }
+  footer small { font: 500 .8rem/1 var(--mono); }
+  .sticker {
+    font: 400 .95rem/1 var(--head); background: var(--red); color: var(--ink);
+    border: 4px solid var(--ink); box-shadow: 4px 4px 0 var(--ink);
+    padding: 10px 12px; transform: rotate(-6deg); white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .btn { transition: transform .08s ease-out, box-shadow .08s ease-out; }
+  }
+  /* reduced motion: no movement, just a colour cue */
+  @media (prefers-reduced-motion: reduce) {
+    .btn:hover, .btn:active { transform: none; box-shadow: 6px 6px 0 var(--ink); background: var(--yellow); }
+    .featured:hover, .featured:active { background: #fff; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img class="avatar" src="/me-avatar.jpg" alt="Tekeshwar Singh" width="120" height="120" fetchpriority="high" decoding="async">
+    <h1>Tekeshwar Singh</h1>
+    <p class="handle">@tsvillain</p>
+    <p class="bio">Engineer shipping AI to prod. I judge trending AI repos so you don't have to.</p>
+  </header>
+
+  <p class="note">start here</p>
+  <a class="btn featured" href="https://firsttoken.dev" target="_blank" rel="noopener">
+    <span class="i" aria-hidden="true">📬</span>
+    <span>First Token — production AI engineering newsletter</span>
+  </a>
+  <p class="perk">Free: 25-page Production RAG Eval Cheatsheet when you subscribe</p>
+
+  <section aria-labelledby="watch">
+    <h2 id="watch">Watch</h2>
+    <ul>
+      <li><a class="btn" href="https://www.youtube.com/@tsvillain" target="_blank" rel="noopener"><span class="i" aria-hidden="true">&#9654;&#xFE0E;</span><span>Ship or Skip on YouTube</span></a></li>
+      <li><a class="btn" href="https://www.youtube.com/playlist?list=PLcg7Dyzldgtw" target="_blank" rel="noopener"><span class="i" aria-hidden="true">&#9776;&#xFE0E;</span><span>Ship or Skip playlist</span></a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="follow">
+    <h2 id="follow">Follow</h2>
+    <ul>
+      <li><a class="btn" href="https://x.com/tsvillain" target="_blank" rel="noopener"><span class="i" aria-hidden="true">𝕏</span><span>X / Twitter — daily AI terms</span></a></li>
+      <li><a class="btn" href="https://www.linkedin.com/in/tsvillain/" target="_blank" rel="noopener"><span class="i" aria-hidden="true">in</span><span>LinkedIn</span></a></li>
+      <li><a class="btn" href="https://github.com/tsvillain" target="_blank" rel="noopener"><span class="i" aria-hidden="true">&lt;/&gt;</span><span>GitHub</span></a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="more">
+    <h2 id="more">More</h2>
+    <ul>
+      <li><a class="btn" href="https://www.firsttoken.dev/archive" target="_blank" rel="noopener"><span class="i" aria-hidden="true">&#8594;</span><span>First Token archive</span></a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <small>© 2026 Tekeshwar Singh</small>
+    <span class="sticker">SHIP OR SKIP?</span>
+  </footer>
+</main>
+</body>
+</html>
