@@ -1,19 +1,43 @@
+/* Hallmark · checked: 2026-10-28 · genre: editorial (inferred: a personal site and blog, read top to bottom)
+ * floor: 0 FAIL · fixed: 9 (1, 10, 26a, 26b, 27, 34, 40, 63, F3) · structural: 3 printed (6b, 42, 58)
+ * built: the project · redesign: polish · v2.0.0 */
+/* Hallmark · waive 64 · display is mono: the h1 name and every h2 head are set in JetBrains Mono · the e-ink terminal voice of this portfolio is mono, so its meta rows are too */
+
 @import "tailwindcss";
 
 @theme inline {
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-jbmono), ui-monospace, SFMono-Regular, Menlo,
     monospace;
+  --font-display: var(--font-mono);
 }
 
 @theme {
   --color-paper: #ece9e0;
   --color-ink: #1a1a1a;
-  --color-muted: #6f6b60;
+  --color-muted: #625e54;
   --color-rule: #c7c3b8;
 }
 
+/* cursor glyphs: data URIs can't read var(), so the ink/paper hexes live here
+   beside the colour tokens they mirror */
+:root {
+  --cursor-arrow:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='26' viewBox='0 0 20 22'><path d='M3 1 L3 19 L7.5 15 L10.5 21 L13 20 L10 14 L16 14 Z' fill='%231a1a1a' stroke='%23ece9e0' stroke-width='1.2' stroke-linejoin='round'/></svg>")
+      4 1,
+    auto;
+  --cursor-link:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='20' viewBox='0 0 12 16'><rect x='1' y='1' width='10' height='14' fill='%231a1a1a' stroke='%23ece9e0' stroke-width='1.2'/></svg>")
+      8 9,
+    pointer;
+}
+
 @layer base {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-paper text-ink font-sans;
     font-size: 17px;
@@ -22,10 +46,7 @@
     -moz-osx-font-smoothing: grayscale;
     position: relative;
     animation: eink-refresh 0.35s steps(1, end) 1;
-    cursor:
-      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='26' viewBox='0 0 20 22'><path d='M3 1 L3 19 L7.5 15 L10.5 21 L13 20 L10 14 L16 14 Z' fill='%231a1a1a' stroke='%23ece9e0' stroke-width='1.2' stroke-linejoin='round'/></svg>")
-        4 1,
-      auto;
+    cursor: var(--cursor-arrow);
   }
 
   /* ponytail: fake e-ink pixel grain via CSS noise, no image asset / lib needed */
@@ -41,18 +62,34 @@
 
   a {
     text-decoration: underline;
-    text-decoration-color: var(--color-rule);
+    text-decoration-color: var(--color-muted);
     text-underline-offset: 3px;
-    cursor:
-      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='20' viewBox='0 0 12 16'><rect x='1' y='1' width='10' height='14' fill='%231a1a1a' stroke='%23ece9e0' stroke-width='1.2'/></svg>")
-        8 9,
-      pointer;
+    cursor: var(--cursor-link);
   }
 
-  a:hover {
+  a:hover,
+  a:focus-visible {
     background: var(--color-ink);
     color: var(--color-paper);
     text-decoration: none;
+  }
+
+  /* instant ring, no transition: e-ink has no in-between frames */
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  a:active {
+    background: var(--color-muted);
+    color: var(--color-paper);
+  }
+
+  h1,
+  h2 {
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    min-width: 0;
   }
 
   ::selection {
@@ -114,12 +151,29 @@
   .prose-eink pre.mermaid {
     border: none;
     padding: 0;
+    overflow-x: auto;
     text-align: center;
+  }
+  /* mermaid fits diagrams to their box; a floor keeps labels legible (narrow
+     screens scroll), and wide screens let the figure out past the text column */
+  .prose-eink pre.mermaid svg {
+    min-width: 40rem;
+  }
+  @media (min-width: 72rem) {
+    .prose-eink pre.mermaid {
+      margin-inline: -12rem;
+    }
   }
   /* flat e-ink corners: kill mermaid's rounded node rects */
   .prose-eink .mermaid rect {
     rx: 0;
     ry: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body {
+      animation: none;
+    }
   }
 
   @keyframes eink-refresh {

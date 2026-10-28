@@ -55,7 +55,7 @@ export default async function PostPage({
   return (
     <div className="max-w-[68ch] mx-auto px-5 py-16">
       <p className="font-mono text-[13px] text-muted">
-        <Link href="/blog">← blog</Link>
+        <Link href="/blog">back to the blog</Link>
       </p>
 
       <h1 className="font-mono text-2xl font-bold tracking-tight mt-8 leading-snug">
@@ -69,7 +69,7 @@ export default async function PostPage({
 
       <hr className="border-rule mt-14" />
       <footer className="font-mono text-xs text-muted mt-5">
-        <Link href="/blog">← more posts</Link>
+        <Link href="/blog">more posts</Link>
       </footer>
     </div>
   );

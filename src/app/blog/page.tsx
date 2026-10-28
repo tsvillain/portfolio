@@ -14,12 +14,12 @@ export default function Blog() {
   return (
     <div className="max-w-[68ch] mx-auto px-5 py-16">
       <p className="font-mono text-[13px] text-muted">
-        <Link href="/">← home</Link>
+        <Link href="/">back home</Link>
       </p>
 
-      <h2 className="font-mono text-base font-semibold lowercase mt-8 mb-8">
+      <h1 className="font-mono text-base font-semibold lowercase mt-8 mb-8">
         blog
-      </h2>
+      </h1>
 
       <section className="space-y-8">
         {byNewest.map((p) => (

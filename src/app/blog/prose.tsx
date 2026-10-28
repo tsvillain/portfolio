@@ -19,14 +19,17 @@ export default function Prose({ html }: { html: string }) {
     const paper = tok("--color-paper");
     const ink = tok("--color-ink");
     const muted = tok("--color-muted");
+    // mermaid sizes node boxes by measuring text, so it needs the real family
+    // name (not a var()) and the font loaded first, or labels come out clipped
+    const mono = `${tok("--font-jbmono") ?? ""}, monospace`;
 
     let cancelled = false;
-    import("mermaid").then(({ default: mermaid }) => {
+    Promise.all([import("mermaid"), document.fonts.ready]).then(([{ default: mermaid }]) => {
       if (cancelled) return;
       mermaid.initialize({
         startOnLoad: false,
         theme: "base",
-        fontFamily: "var(--font-mono), monospace",
+        fontFamily: mono,
         themeVariables: {
           background: paper,
           primaryColor: paper,

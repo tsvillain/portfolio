@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Tekeshwar Singh",
   role: "Senior Software Engineer",
   headshot: "/headshot.webp",
-  tagline: "senior software engineer · india · UTC+5:30",
+  tagline: "senior software engineer, india, UTC+5:30",
   location: "India",
   timezone: "IST (UTC+5:30)",
   email: "tekeshwarsingh2000@gmail.com",

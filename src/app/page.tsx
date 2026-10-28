@@ -47,13 +47,12 @@ export default function Home() {
           <p className="font-mono text-sm text-muted mt-1">
             {personalInfo.tagline}
           </p>
-          <p className="font-mono text-[13px] text-muted mt-3">
+          <p className="font-mono text-[13px] text-muted mt-3 flex flex-wrap gap-x-4 gap-y-1">
             <Link href="/blog">blog</Link>
             {socialLinks.map((s) => (
-              <span key={s.label}>
-                {" · "}
-                <A href={s.href}>{s.label}</A>
-              </span>
+              <A key={s.label} href={s.href}>
+                {s.label}
+              </A>
             ))}
           </p>
         </div>
@@ -97,8 +96,8 @@ export default function Home() {
               {exp.period}
             </p>
             <p className="mt-1">
-              <A href={exp.url}>{exp.company}</A>{" "}
-              <span className="text-muted">· {exp.role}</span>
+              <A href={exp.url}>{exp.company}</A>
+              <span className="text-muted">, {exp.role}</span>
             </p>
             <p className="mt-1">{exp.description}</p>
             {exp.achievements.length > 0 && (
@@ -166,8 +165,9 @@ export default function Home() {
       <hr className="border-rule mt-14" />
       <footer className="font-mono text-xs text-muted mt-5 space-y-1">
         <p>{education}</p>
-        <p>
-          © 2026 · built with next.js · no tracking scripts ·{" "}
+        <p className="flex flex-wrap gap-x-4 gap-y-1">
+          <span>© 2026</span>
+          <span>built with next.js, no tracking scripts</span>
           <a href={`mailto:${email}`}>{email}</a>
         </p>
       </footer>
